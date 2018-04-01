@@ -42,7 +42,8 @@
                         <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#pricing">Care & Share</a></li>
                         <li><a href="#our-team">Our Team</a></li> 
-                        <li><a href="#contact">Contact</a></li>                        
+                        <li><a href="#contact">Contact</a></li> 
+                        <li><a href="login.php">Log In</a></li>                       
                     </ul>
                 </div>
             </div><!--/.container-->

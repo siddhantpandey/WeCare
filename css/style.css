@@ -50,7 +50,7 @@ h4{
 }
 
 a {
-  color: #BB8FCE;
+  color: #0BA9F9;
   -webkit-transition: color 300ms, background-color 300ms;
   -moz-transition: color 300ms, background-color 300ms;
   -o-transition:  color 300ms, background-color 300ms;
@@ -91,12 +91,12 @@ hr {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
-  background-color: #BB8FCE;
+  background-color: #0BA9F9;
 }
 .btn:hover {
 	color: #fff;
-	background-color: #BB8FCE;
-	border-color: #BB8FCE;
+	background-color: #0BA9F9;
+	border-color: #0BA9F9;
 }
 
 /*************************
@@ -155,13 +155,13 @@ hr {
 }
 
 .navbar-fixed-top .navbar-nav > li > a:hover{
-	background: #BB8FCE;	
+	background: #0BA9F9;	
 	color:#fff;
 }
 
 .navbar-fixed-top {
   border: none;
-  background: #BB8FCE;
+  background: #0BA9F9;
 }
 
 .navbar-fixed-top .navbar-brand {
@@ -201,7 +201,7 @@ hr {
 }
 
 #carousel-slider a i {
-  border: 1px solid #BB8FCE;
+  border: 1px solid #0BA9F9;
   border-radius:50%;
   font-size: 30px;
   height: 50px;
@@ -209,13 +209,13 @@ hr {
   position: absolute;
   top: 50%;
   width: 50px;
-  color:#BB8FCE;
+  color:#0BA9F9;
 }
 
 #carousel-slider a i:hover {
-  background:#BB8FCE;
+  background:#0BA9F9;
   color:#fff;
-  border: 1px solid #BB8FCE;
+  border: 1px solid #0BA9F9;
 }
 
 #carousel-slider 
@@ -254,7 +254,7 @@ hr {
 
 .carousel-caption  h2 {
 	font-size:60px;
-	color: #BB8FCE;
+	color: #0BA9F9;
 }
 
 .carousel-caption  h2 span {
@@ -271,12 +271,12 @@ hr {
 .carousel-inner .form-inline .form-group button[type="livedemo"]{
 	padding:20px 60px;
 	font-size:25px;
-	background:#BB8FCE;
+	background:#0BA9F9;
 	color:#fff;
 }
 
 .carousel-inner .form-inline .form-group button[type="livedemo"]:hover {
-	color:#BB8FCE;
+	color:#0BA9F9;
 	background:#fff;
 	-webkit-transition: color 300ms, background-color 300ms;
   -moz-transition: color 300ms, background-color 300ms;
@@ -288,12 +288,12 @@ hr {
 	padding:20px 60px;
 	font-size:25px;
 	background:#fff;
-	color:#BB8FCE;
+	color:#0BA9F9;
 }
 
 .carousel-inner .form-inline .form-group button[type="getnow"]:hover {
 	color:#fff;
-	background:#BB8FCE;
+	background:#0BA9F9;
 	-webkit-transition: color 300ms, background-color 300ms;
   -moz-transition: color 300ms, background-color 300ms;
   -o-transition:  color 300ms, background-color 300ms;
@@ -326,7 +326,7 @@ hr {
 
 .hi-icon-effect i.fa:hover {
 	background:#fff;
-	color: #BB8FCE;
+	color: #0BA9F9;
 	-webkit-transition: color 300ms, background-color 300ms;
   -moz-transition: color 300ms, background-color 300ms;
   -o-transition:  color 300ms, background-color 300ms;
@@ -339,7 +339,7 @@ hr {
 	margin-bottom:30px;
 	color:#fff;
 	padding:50px;
-	background:#BB8FCE;
+	background:#0BA9F9;
 	border-radius:50%;
 }
 .text-center h2 {
@@ -420,12 +420,12 @@ figure.effect-chico:hover img {
 	padding:20px 90px;
 	font-size:20px;
 	background:#fff;
-	color:#BB8FCE;
-	border-color: #BB8FCE;
+	color:#0BA9F9;
+	border-color: #0BA9F9;
 }
 
 .sub-parallax .form-inline .form-group button[type="purchase"]:hover {
-	background:#BB8FCE;
+	background:#0BA9F9;
 	color:#fff;
 	-webkit-transition: color 300ms, background-color 300ms;
   -moz-transition: color 300ms, background-color 300ms;
@@ -440,7 +440,7 @@ figure.effect-chico:hover img {
 
 .sub-parallax .form-inline .form-group button[type="subscribe"]:hover {
 	background:#fff;
-	color:#BB8FCE;
+	color:#0BA9F9;
 	-webkit-transition: color 300ms, background-color 300ms;
   -moz-transition: color 300ms, background-color 300ms;
   -o-transition:  color 300ms, background-color 300ms;
@@ -552,12 +552,12 @@ figure.effect-chico:hover img {
 
 .pricing-area .heading-four, 
 .pricing-area .price-four .plan-action .btn-primary {
-  background: #BB8FCE;
+  background: #0BA9F9;
 }
 
 .pricing-area .heading-five, 
 .pricing-area .price-five .plan-action .btn-primary {
-  background: #BB8FCE;
+  background: #0BA9F9;
 }
 
 .pricing-area .heading-six, 
@@ -567,7 +567,7 @@ figure.effect-chico:hover img {
 
 .pricing-area .heading-seven, 
 .pricing-area .price-seven .plan-action .btn-primary {
-  background: #BB8FCE;
+  background: #0BA9F9;
 }
 
 .pricing-area .bg{
@@ -655,7 +655,7 @@ figure.effect-chico:hover img {
 .pricing-area .price-five .plan-action .btn-primary:after, 
 .pricing-area .price-seven .plan-action .btn-primary:before, 
 .pricing-area .price-seven .plan-action .btn-primary:after  {
-  border-color: #BB8FCE transparent transparent;
+  border-color: #0BA9F9 transparent transparent;
   right: -9px;
 }
 
@@ -675,7 +675,7 @@ figure.effect-chico:hover img {
 }
 
 #our-team h4 {
-	color:#BB8FCE;
+	color:#0BA9F9;
 }
 
 #our-team .text-center {
@@ -748,7 +748,7 @@ footer {
 
 .sub-footer .form-inline .form-group button[type="purchase"]:hover {
 	background:#fff;
-	color:#BB8FCE;
+	color:#0BA9F9;
 	-webkit-transition: color 300ms, background-color 300ms;
   -moz-transition: color 300ms, background-color 300ms;
   -o-transition:  color 300ms, background-color 300ms;
@@ -759,12 +759,12 @@ footer {
 	padding:20px 90px;
 	font-size:25px;
 	background:#fff;
-	color:#BB8FCE;
-	border-color: #BB8FCE;
+	color:#0BA9F9;
+	border-color: #0BA9F9;
 }
 
 .sub-footer .form-inline .form-group button[type="subscribe"]:hover {
-	background:#BB8FCE;
+	background:#0BA9F9;
 	color:#fff;
 	-webkit-transition: color 300ms, background-color 300ms;
   -moz-transition: color 300ms, background-color 300ms;

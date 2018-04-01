@@ -1,4 +1,25 @@
-<!DOCTYPE html>
+<?php include('server.php');?>
+
+<?php 
+if(isset($_POST['submit'])){
+    $to = "2018wecare@gmail.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
+    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
+    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    }
+?>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -256,37 +277,7 @@
 			</div>
 		</div>
 	</div><!--/#gallery-->
-	
-	<div class="parallax-window">
-		<div class="col-md-6 col-md-offset-3">
-			<div class="text-center">
-				<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.2s">
-					<h2>Parallax Landing Page</h2>
-				</div>
-				<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.6s">
-					<p>In a elit in lorem congue varius Sed nec arcu<br>
-					ullamcorp-er tellus ut dignissim nisi risus non tortor.
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="sub-parallax">
-			<div class="text-center">
-				<div class="col-md-12">
-					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.9s">
-						<form class="form-inline">
-							<div class="form-group">
-								<button type="purchase" name="purchase" class="btn btn-primary btn-lg" required="required">Purchase</button>
-							</div>
-							<div class="form-group">
-								<button type="subscribe" name="subscribe" class="btn btn-primary btn-lg" required="required">Subscribe Now</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div><!--/#parallax-window-->
+
 	
 	<div id="pricing">
 		<div class="container">
@@ -487,24 +478,25 @@
 					</div>
 					
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">					
-						<form class="form-inline">
+						<form action="" class="form-inline" method="post" >
 							<div class="form-group">
-								<input type="name" class="form-control" id="exampleInputName" placeholder="name">							
+								<input type="name" class="form-control" name="first_name" id="firstName" placeholder="firstName">						<input type="name" class="form-control" name="last_name" id="lastName" placeholder="lastName">							
+	
 							</div>
 							<div class="form-group">							
-								<input type="email" class="form-control" id="exampleInputEmail1" placeholder="email">
+								<input type="email" id="email" class="form-control" name="email" id="InputEmail1" placeholder="email">
 							</div>
-						</form>
 						
-						<form>	
+						
+					
 							<div class="form-group">
-								<input type="subject" class="form-control" placeholder="Subject">
+								<input type="subject" class="form-control" name="subject" placeholder="Subject" id="subject">
 							</div>						
-							<textarea class="form-control" rows="5"></textarea>							
+							<textarea class="form-control" rows="5" id="mailbody" name="message"></textarea>							
 							<div class="form-group">
-								<button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Submit Message</button>
+								<button type="submit" name="submit" class="btn btn-primary btn-lg" required="required" id="sendmail" name="submit">Submit Message</button>
 							</div>
-						</form>
+						</form>						
 					</div>	
 				</div>
 			</div>
