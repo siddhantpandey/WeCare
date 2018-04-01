@@ -1,4 +1,5 @@
 <?php include('server.php');?>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -70,7 +71,7 @@
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.4s">
 						<h2></h2>
 						<ul>
-						 <form action="register.php" method="post">
+						 <form action="checklogin.php" method="post">
            <!-- display validation errors here -->
            <?php include('errors.php');  ?>
             <div class="input-group">

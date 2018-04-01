@@ -15,7 +15,11 @@ if(isset($_POST['submit'])){
     $headers2 = "From:" . $to;
     mail($to,$subject,$message,$headers);
     mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
-    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+    echo "<script>
+    alert('Mail Sent. Thank you, we will contact you shortly.');
+   
+    </script>";
+   // echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
     // You can also use header('Location: thank_you.php'); to redirect to another page.
     }
 ?>
@@ -473,12 +477,12 @@ if(isset($_POST['submit'])){
 						<ul>
 							<li><i class="fa fa-home fa-2x"></i> Room # 601, Boys' Hostel 3A, Lovely Professional University, Punjab 144411</li><hr>
 							<li><i class="fa fa-phone fa-2x"></i> +919872421830</li><hr>
-							<li><i class="fa fa-envelope fa-2x"></i> siddhantnpandey@gmail.com</li>
+							<li><i class="fa fa-envelope fa-2x"></i> 2018wecare@gmail.com</li>
 						</ul>
 					</div>
 					
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">					
-						<form action="" class="form-inline" method="post" >
+						<form action=""  method="post" >
 							<div class="form-group">
 								<input type="name" class="form-control" name="first_name" id="firstName" placeholder="firstName">						<input type="name" class="form-control" name="last_name" id="lastName" placeholder="lastName">							
 	
