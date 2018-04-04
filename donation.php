@@ -39,72 +39,66 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">Home</a></li>
-                          
+                        <li><a href="#feature">Feature</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#pricing">Care & Share</a></li>
+                        <li><a href="#our-team">Our Team</a></li> 
+                        <li><a href="#contact">Contact</a></li>   
                         <li><a href="login.php">Log In</a></li>                     
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->		
     </header><!--/header-->	
-   
-   
+  
+   <div id="gallery">
+		<div class="container">
+			<div class="text-center">
+				<h3>Donation Options</h3>
+				<p>Select an option to donate for</p>
+			</div>
+			<div class="row">
+				<figure class="effect-chico">
+						<div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
+							<a href="img/donation/p1.jpg" class="flipLightBox">
+							<img src="img/donation/p1.jpg" class="img-responsive" alt="" height="1600px" width="1400px" title="Beggar Kids">
+							
+							</a>
+						</div>
+					</figure>
+				<figure class="effect-chico">
+						<div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
+							<a href="img/donation/p2.jpg" class="flipLightBox">
+							<img src="img/donation/p2.jpg" class="img-responsive" alt="" title="Homeless">
+							
+							</a>
+						</div>
+					</figure>	
+				<figure class="effect-chico">
+						<div class="col-md-3 wow fadeInDown" data-wow-offset="0" data-wow-delay="0.3s">
+							<a href="img/donation/p3.jpg" class="flipLightBox">
+							<img src="img/donation/p3.jpg" class="img-responsive" alt="" title="Schooling">
+							
+							</a>
+						</div>
+					</figure>
+				<figure class="effect-chico">
+						<div class="col-md-3 wow fadeInDown" data-wow-offset="0" data-wow-delay="0.3s">
+							<a href="img/donation/p4.jpg" class="flipLightBox">
+							<img src="img/donation/p4.jpg" class="img-responsive" alt="" title="Child Labour">
+							
+							</a>
+						</div>
+					</figure>
+			</div>
+		</div>
+		
+	</div><!--/#gallery-->
+
+
    
    <footer>
-		<div id="contact">
-			<div class="container">
-				<div class="text-center">
-					<h3>Log In</h3>
-					<p></p>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.2s">
-						<h2></h2>
-						<p></p>				
-					</div>				
-					
-					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.4s">
-						<h2></h2>
-						<ul>
-						<form action="login.php" method="post">
-            <!-- display validation errors here -->
-           <?php include('errors.php');  ?>
-               
-            <div class="input-group">
-                <label>Username</label>
-                <input type="text" name="username">
-                
-            </div>
-            
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" name="password">
-                
-            </div>
-            
-            <div class="input-group">
-                <button type="submit" name="login" class="btn">Login</button>
-            </div>
-            <p>
-                Not yet a member? <a href="register.php">Sign up</a>
-            </p>
-        </form>
-						</ul>
-					</div>
-					
-					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">					
-						<form class="form-inline">
-							
-						</form>
 						
-						<form>	
-							
-						</form>
-					</div>	
-				</div>
-			</div>
-		</div><!--/#contact-->					
 		<div class="container">
 			<div class="sub-footer">
 				<div class="text-center">

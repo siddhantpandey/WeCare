@@ -58,7 +58,7 @@ if(isset($_POST['submit'])){
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">WeCare</a>
+                    <a class="navbar-brand" href="index.php">WeCare</a>
                 </div>				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
@@ -340,7 +340,7 @@ if(isset($_POST['submit'])){
                             <li>and homeless</li>
                             <li></li>
                             <li class="plan-action">
-                                <a href="" class="btn btn-primary">Donate</a>
+                                <a href="donation.php" class="btn btn-primary">Donate</a>
                             </li>
                         </ul>
                     </div>
@@ -348,21 +348,19 @@ if(isset($_POST['submit'])){
                     <div class="col-sm-6 col-md-3 plan price-four wow fadeInLeft">
                         <ul>
                             <li class="heading-four">
-                                <h2></h2>
-                                <span></span>
+                                <h2>Contribution</h2>
+                                <!--<span></span>-->
                             </li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li>Picture</li>
+                            <li>Location</li>
+                            <li>Your Details</li>
                             <li class="plan-action">
-                                <a href="" class="btn btn-primary"></a>
+                                <a href="form.php" class="btn btn-primary">Donate</a>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="col-sm-6 col-md-3 plan price-five wow fadeInLeft">
+                    <!--<div class="col-sm-6 col-md-3 plan price-five wow fadeInLeft">
                         <ul>
                             <li class="heading-five">
                                 <h2></h2>
@@ -412,7 +410,7 @@ if(isset($_POST['submit'])){
                                 <a href="" class="btn btn-primary"></a>
                             </li>
                         </ul>
-                    </div>
+                    </div>-->
                 </div>
             </div><!--/pricing-area-->			
 		</div>

@@ -39,7 +39,11 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">Home</a></li>
-                          
+                        <li><a href="#feature">Feature</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#pricing">Care & Share</a></li>
+                        <li><a href="#our-team">Our Team</a></li> 
+                        <li><a href="#contact">Contact</a></li>   
                         <li><a href="login.php">Log In</a></li>                     
                     </ul>
                 </div>
@@ -71,25 +75,49 @@
             <!-- display validation errors here -->
            <?php include('errors.php');  ?>
                
-            <div class="input-group">
-                <label>Username</label>
+           <!-- <div class="input-group">
+                <label>Username</label>&nbsp;
                 <input type="text" name="username">
                 
             </div>
-            
+            <br/>
             <div class="input-group">
-                <label>Password</label>
+                <label>Password</label>&nbsp;
                 <input type="password" name="password">
                 
             </div>
-            
+            <br/>
             <div class="input-group">
                 <button type="submit" name="login" class="btn">Login</button>
             </div>
+            <br/>
             <p>
-                Not yet a member? <a href="register.php">Sign up</a>
-            </p>
-        </form>
+                Not yet a member? <a href="signup.php">Sign up</a>
+            </p>-->
+          <table cellspacing='20'>
+            	 <tr>
+					   	  <td>Name of the Person</td> <td><input type="text" name="a1" placeholder="Name"></td>
+					   </tr>
+					   
+					   <tr>
+					   	   <td>Aadhar Card Number</td><td><input type="text" name="a2" placeholder="Aadhar Number" /></td>
+					   </tr>
+					
+					   <tr>
+					   	   <td>Contact Number</td><td><input type="text" name="a3" placeholder="Phone Number" /></td>
+					   </tr>
+					   <tr>
+					   	   <td>Location</td><td><input type="text" name="a4" placeholder="Location" /></td>
+					   </tr>
+					 
+					  <tr>
+					   	   <td>Issue</td><td><input type="text" name="a4" placeholder="Issue" /></td>
+					   </tr>
+					   <tr>   
+						   <td><input type="submit" value="Submit" name="xxx"></td><td><input type="reset" /></td>
+					   </tr>
+            </table>
+        </form>	
 						</ul>
 					</div>
 					

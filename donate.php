@@ -1,5 +1,5 @@
-<?php include('server.php');?>
-
+(<?php include('server.php');
+  ?>)
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -43,8 +43,8 @@
                         <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#pricing">Care & Share</a></li>
                         <li><a href="#our-team">Our Team</a></li> 
-                        <li><a href="#contact">Contact</a></li> 
-                        <li><a href="login.php">Log In</a></li>                       
+                        <li><a href="#contact">Contact</a></li>   
+                        <li><a href="login.php">Log In</a></li>                     
                     </ul>
                 </div>
             </div><!--/.container-->
@@ -57,7 +57,7 @@
 		<div id="contact">
 			<div class="container">
 				<div class="text-center">
-					<h3>Sign Up</h3>
+					<h3>Donation</h3>
 					<p></p>
 				</div>
 			</div>
@@ -71,46 +71,69 @@
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.4s">
 						<h2></h2>
 						<ul>
-						 <form action="checklogin.php" method="post">
-           <!-- display validation errors here -->
+						<form action="login.php" method="post">
+            <!-- display validation errors here -->
            <?php include('errors.php');  ?>
-            <div class="input-group">
+               
+           <!-- <div class="input-group">
                 <label>Username</label>&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;
-                <input type="text" name="username" value="<?php echo $username; ?>">
-                
-            </div>
-            <br/>
-            <div class="input-group">
-                <label>Email</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;
-                <input type="text" name="email" value="<?php echo $email; ?>">
+                <input type="text" name="username">
                 
             </div>
             <br/>
             <div class="input-group">
                 <label>Password</label>&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;
-                <input type="password" name="password_1">
+                <input type="password" name="password">
                 
             </div>
             <br/>
             <div class="input-group">
-                <label>Confirm Password</label>&nbsp;
-                <input type="password" name="password_2">
-                
-            </div>
-            <br/>
-            <div  class="input-group">
-                <button type="submit" name="register" class="btn">Register</button>
+                <button type="submit" name="login" class="btn">Login</button>
             </div>
             <br/>
             <p>
-                Already a member? <a href="login.php">Sign in</a>
-            </p>
+                Not yet a member? <a href="signup.php">Sign up</a>
+            </p>-->
+        		<div class="gallery">
+			<div class="container">
+				<table>
+				<div class="row">
+					<tr><td>
+					<figure class="effect-chico">
+						<div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
+							<a href="p1.jpg" class="flipLightBox">
+							<img src="p1.jpg" class="img-responsive" alt="">
+							</a>
+						</div>
+					</figure>	</td>
+					<td>
+					<figure class="effect-chico">
+						<div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
+							<a href="p2.jpg" class="flipLightBox">
+							<img src="p2.jpg" class="img-responsive" alt="">
+							</a>
+						</div>
+					</figure>	</td></tr>
+					<tr><td>
+					<figure class="effect-chico">
+						<div class="col-md-3 wow fadeInDown" data-wow-offset="0" data-wow-delay="0.3s">
+							<a href="p3.jpg" class="flipLightBox">
+							<img src="p3.jpg" class="img-responsive" alt="">
+							</a>
+						</div>
+					</figure>	</td>
+					<td>
+					<figure class="effect-chico">
+						<div class="col-md-3 wow fadeInDown" data-wow-offset="0" data-wow-delay="0.3s">
+							<a href="p4.jpg" class="flipLightBox">
+							<img src="p4.jpg" class="img-responsive" alt="">
+							</a>
+						</div>
+					</figure></td></tr>
+				</div>
+			</table>
+			</div>
+		</div>
         </form>	
 						</ul>
 					</div>

@@ -1,5 +1,5 @@
-(<?php include('server.php');
-  ?>)
+<?php include('server.php');?>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -39,8 +39,7 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">Home</a></li>
-                          
-                        <li><a href="login.php">Log In</a></li>                     
+                        <li><a href="login.php">Log In</a></li>                       
                     </ul>
                 </div>
             </div><!--/.container-->
@@ -53,7 +52,7 @@
 		<div id="contact">
 			<div class="container">
 				<div class="text-center">
-					<h3>Log In</h3>
+					<h3>Sign Up</h3>
 					<p></p>
 				</div>
 			</div>
@@ -67,27 +66,34 @@
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.4s">
 						<h2></h2>
 						<ul>
-						<form action="login.php" method="post">
-            <!-- display validation errors here -->
+						 <form action="register.php" method="post">
+           <!-- display validation errors here -->
            <?php include('errors.php');  ?>
-               
             <div class="input-group">
                 <label>Username</label>
-                <input type="text" name="username">
+                <input type="text" name="username" value="<?php echo $username; ?>">
                 
             </div>
-            
+            <div class="input-group">
+                <label>Email</label>
+                <input type="text" name="email" value="<?php echo $email; ?>">
+                
+            </div>
             <div class="input-group">
                 <label>Password</label>
-                <input type="password" name="password">
+                <input type="password" name="password_1">
                 
             </div>
-            
             <div class="input-group">
-                <button type="submit" name="login" class="btn">Login</button>
+                <label>Confirm Password</label>
+                <input type="password" name="password_2">
+                
+            </div>
+            <div class="input-group">
+                <button type="submit" name="register" class="btn">Register</button>
             </div>
             <p>
-                Not yet a member? <a href="register.php">Sign up</a>
+                Already a member? <a href="login.php">Sign in</a>
             </p>
         </form>
 						</ul>

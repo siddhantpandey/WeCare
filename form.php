@@ -22,6 +22,20 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+      table {
+    border-collapse: collapse;
+    }
+
+    td {
+        padding-top: .5em;
+        padding-bottom: .5em;
+    }
+        #gallery{
+            background-image: url=("img/map.jpg");
+            background-color: lightblue;
+}
+    </style>
   </head>
   <body>	
 	<header id="header">
@@ -39,7 +53,6 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">Home</a></li>
-                          
                         <li><a href="login.php">Log In</a></li>                     
                     </ul>
                 </div>
@@ -49,11 +62,14 @@
    
    
    
-   <footer>
-		<div id="contact">
+   
+   
+   <div id="gallery" >
+       <div class="container">
+		<div >
 			<div class="container">
 				<div class="text-center">
-					<h3>Log In</h3>
+					<h3>Person of Interest</h3>
 					<p></p>
 				</div>
 			</div>
@@ -67,32 +83,72 @@
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.4s">
 						<h2></h2>
 						<ul>
-						<form action="login.php" method="post">
-            <!-- display validation errors here -->
-           <?php include('errors.php');  ?>
-               
-            <div class="input-group">
-                <label>Username</label>
-                <input type="text" name="username">
-                
-            </div>
-            
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" name="password">
-                
-            </div>
-            
-            <div class="input-group">
-                <button type="submit" name="login" class="btn">Login</button>
-            </div>
-            <p>
-                Not yet a member? <a href="register.php">Sign up</a>
-            </p>
-        </form>
+						
+            <table cellspacing="2" cellpadding="2">
+            	 <tr>
+					   	   <td>
+					   	   <label>Name: </label>
+                            </td>
+                            <td>
+					   	   <input type="text" name="a1" placeholder="Name"></td>
+					   </tr>
+					   <tr>
+					   	   <td>
+					   	   <label>Aadhar Number: </label>
+					   	    </td>
+                            <td>
+					   	   <input type="email" name="a2" placeholder="Aadhar Number" /></td>
+					   </tr>
+					   <tr>
+					   	   <td>
+					   	   <label>Phone Number: </label>
+					   	    </td>
+                            <td>
+					   	   <input type="text" name="a3" placeholder="Phone Number" /></td>
+					   </tr>
+					   <tr>
+					   	   <td>
+					   	   <label>Location: </label>
+					   	    </td>
+                            <td>
+					   	   <input type="address" name="a4" placeholder="Location" /></td>
+					   </tr>
+					   <tr>   
+						   <td>
+						   <label>Issue: </label>
+						    </td>
+                            <td>
+						   <input type="textbox" name="issue"></td>
+					   </tr>
+					   <tr>   
+						   <td>
+						   <label>Upload Image: </label>
+						    </td>
+                            <td>
+						   <form align="center" action="" method="post" enctype="multipart/form-data" name="form1">
+                            <input type="file" name="resume" id="resume">
+                            <input type="submit"  name="SubmitBtn" id="SubmitBtn" value="Upload">
+                            </form> 
+                            </td>
+					   </tr>
+					   <tr>   
+						   <td>
+						   
+						   <input type="submit" value="Submit" name="xxx">
+						    </td>
+                            <td>
+                            <input type="reset" /></td>
+					   </tr>
+            </table>	
+
+                    <!--File Upload-->
+                                            
+                    
+                    
+                    
+                    
 						</ul>
 					</div>
-					
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">					
 						<form class="form-inline">
 							
@@ -104,8 +160,14 @@
 					</div>	
 				</div>
 			</div>
-		</div><!--/#contact-->					
-		<div class="container">
+		</div><!--/#contact-->	
+       </div>
+	</div><!--/#gallery-->
+
+   
+   
+   <footer>	
+   <div class="container">
 			<div class="sub-footer">
 				<div class="text-center">
 					<div class="col-md-12">

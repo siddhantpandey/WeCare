@@ -6,7 +6,7 @@
     $email="";
     $errors=array();
     //connect to the database
-    $db = mysqli_connect('localhost','root','','wecare');
+    $db = mysqli_connect('localhost','root','','registration');
 
     //if the register button is clicked
     if(isset($_POST['register'])) {
@@ -43,21 +43,7 @@
             $sql = "INSERT INTO users (username, email, password) VALUES ('$username','$email','$password')";
             mysqli_query($db,$sql);
             $_SESSION['username'] = $username;
-            $_SESSION['success'] = true;
-            ?>
-            <li class='active' style='float:right;'>
-                <?php
-              if($_SESSION['success']==true)
-                { 
-                  echo $_SESSION["username"];
-                  echo '<a href="logout.php"><span>Logout</span></a></li>';
-                }
-              elseif($_SESSION['success']==false)
-                {
-                  echo '<a href="login.php"><span>Log In</span></a></li>';
-                }
-              ?>
-            <?php
+            $_SESSION['success'] = "You are now logged in";
             header('location: index.php'); //redirect to homepage
         }
     }
