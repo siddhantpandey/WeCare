@@ -1,28 +1,98 @@
-(<?php include('server.php');
-  ?>)
-<html lang="en">
+
+<!--new-->
+
+<?php include('upload.php'); ?>
+<?php
+// Include config file
+require_once 'config.php';
+//require_once 'upload.php'; 
+// Define variables and initialize with empty values
+$name = $issue = $address = "";
+$aadhaar = $phone = 0;
+$name_err = $aadhaar_err =$phone_err = $address_err = $issue_err = "";
+ 
+// Processing form data when form is submitted
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+ 
+    // Check if name is empty
+    if(empty(trim($_POST["name"]))){
+        $name_err = 'Please enter name.';
+    } else{
+        $name = trim($_POST["name"]);
+    }
+    
+    // Check if aadhaar is empty
+    if(empty(trim($_POST['aadhaar']))){
+        $aadhaar_err = 'Please enter aadhaar.';
+    } else{
+        $aadhaar = trim($_POST['aadhaar']);
+    }
+    
+    // Check if phone is empty
+    if(empty(trim($_POST['phone']))){
+        $phone_err = 'Please enter phone.';
+    } else{
+        $phone = trim($_POST['phone']);
+    }
+    
+    // Check if address is empty
+    if(empty(trim($_POST['address']))){
+        $address_err = 'Please enter address.';
+    } else{
+        $address = trim($_POST['address']);
+    }
+    
+    // Check if issue is empty
+    if(empty(trim($_POST['issue']))){
+        $issue_err = 'Please enter issue.';
+    } else{
+        $issue = trim($_POST['issue']);
+    }
+    $image = trim($_POST['fileToUpload']);
+    $sql = "INSERT into personsOfInterest values('$name',$aadhaar,$phone,'$address','$issue','$image')";
+    $check = "SELECT aadhaar FROM  personsOfInterest WHERE aadhaar=$aadhaar";
+    $result=mysqli_stmt_execute($check);
+    if(mysqli_stmt_num_rows($result)==1){
+        echo "Person already exists in database.";
+        header("location: index2.php");
+    }
+    else{
+        $result = mysqli_stmt_execute($sql);
+        $message="Data submitted successfully. You will be redirected shortly.";
+        echo "<script>alert('$message');</script>";
+        sleep(10);
+        header("location: index.php");
+    }
+    // Close connection
+    mysqli_close($link);
+}
+?>
+
+
+
+ <html lang="en">
   <head>
+   
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>WeCare</title>
-    
-    <!-- Bootstrap -->
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/overwrite.css">
 	<link href="css/animate.min.css" rel="stylesheet"> 
 	<link href="css/style.css" rel="stylesheet" />	
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <style type="text/css">
+        body{ font: 14px sans-serif; }
+        .wrapper{ width: 350px; padding: 20px; }
+    </style>
   </head>
+  
+  
   <body>	
 	<header id="header">
         <nav class="navbar navbar-fixed-top" role="banner">
@@ -34,16 +104,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">WeCare</a>
+                    <a class="navbar-brand" href="index2.php">WeCare</a>
                 </div>				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">Home</a></li>
-                        <li><a href="#feature">Feature</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#pricing">Care & Share</a></li>
-                        <li><a href="#our-team">Our Team</a></li> 
-                        <li><a href="#contact">Contact</a></li>   
+                          
                         <li><a href="login.php">Log In</a></li>                     
                     </ul>
                 </div>
@@ -51,88 +117,106 @@
         </nav><!--/nav-->		
     </header><!--/header-->	
    
+   <!--Log In Form-->
+   <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+   <center>
+   <div class="wrapper">
+        <h2>Person of Interest</h2>
+        <p>Please fill in the credentials.</p>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
+                <label>Name</label>
+                <input type="text" name="name"class="form-control" value="<?php echo $name; ?>">
+                <span class="help-block"><?php echo $name_err; ?></span>
+            </div>    
+            <div class="form-group <?php echo (!empty($aadhaar_err)) ? 'has-error' : ''; ?>">
+                <label>Aadhaar</label>
+                <input type="number" name="aadhaar" class="form-control">
+                <span class="help-block"><?php echo $aadhaar_err; ?></span>
+            </div>
+            <div class="form-group <?php echo (!empty($phone_err)) ? 'has-error' : ''; ?>">
+                <label>Phone</label>
+                <input type="number" name="phone" class="form-control">
+                <span class="help-block"><?php echo $phone_err; ?></span>
+            </div>
+            <div class="form-group <?php echo (!empty($address_err)) ? 'has-error' : ''; ?>">
+                <label>Address</label>
+                <input type="text" name="address" class="form-control">
+                <span class="help-block"><?php echo $address_err; ?></span>
+            </div>
+            <div class="form-group <?php echo (!empty($issue_err)) ? 'has-error' : ''; ?>">
+                <label>Issue</label>
+                <input type="text" name="issue" class="form-control">
+                <span class="help-block"><?php echo $issue_err; ?></span>
+            </div>
+            <div class="form-group <?php echo (!empty($image_err)) ? 'has-error' : ''; ?>">
+                <label>Select image to upload:</label>
+                <input type="file" name="fileToUpload" id="fileToUpload">
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Submit" name="submit">
+            </div>
+        </form>
+    </div>    
+      </center>
    
    
-   <footer>
+   
+  <footer>
 		<div id="contact">
 			<div class="container">
 				<div class="text-center">
-					<h3>Log In</h3>
-					<p></p>
+					<h3>Contact Us</h3>
+					<p>Feel free to contact us any time</p>
 				</div>
 			</div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.2s">
-						<h2></h2>
-						<p></p>				
+						<h2>Contact us any time</h2>
+						<p>In a elit in lorem congue varius. Sed nec arcu.
+						Etiam sit amet augue.
+						Fusce fermen tum neque a rutrum varius odio pede 
+						ullamcorp-er tellus ut dignissim nisi risus non tortor.
+						Aliquam mollis neque.</p>				
 					</div>				
 					
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.4s">
-						<h2></h2>
+						<h2>Contact Info</h2>
 						<ul>
-						<form action="login.php" method="post">
-            <!-- display validation errors here -->
-           <?php include('errors.php');  ?>
-               
-           <!-- <div class="input-group">
-                <label>Username</label>&nbsp;
-                <input type="text" name="username">
-                
-            </div>
-            <br/>
-            <div class="input-group">
-                <label>Password</label>&nbsp;
-                <input type="password" name="password">
-                
-            </div>
-            <br/>
-            <div class="input-group">
-                <button type="submit" name="login" class="btn">Login</button>
-            </div>
-            <br/>
-            <p>
-                Not yet a member? <a href="signup.php">Sign up</a>
-            </p>-->
-          <table cellspacing='20'>
-            	 <tr>
-					   	  <td>Name of the Person</td> <td><input type="text" name="a1" placeholder="Name"></td>
-					   </tr>
-					   
-					   <tr>
-					   	   <td>Aadhar Card Number</td><td><input type="text" name="a2" placeholder="Aadhar Number" /></td>
-					   </tr>
-					
-					   <tr>
-					   	   <td>Contact Number</td><td><input type="text" name="a3" placeholder="Phone Number" /></td>
-					   </tr>
-					   <tr>
-					   	   <td>Location</td><td><input type="text" name="a4" placeholder="Location" /></td>
-					   </tr>
-					 
-					  <tr>
-					   	   <td>Issue</td><td><input type="text" name="a4" placeholder="Issue" /></td>
-					   </tr>
-					   <tr>   
-						   <td><input type="submit" value="Submit" name="xxx"></td><td><input type="reset" /></td>
-					   </tr>
-            </table>
-        </form>	
+							<li><i class="fa fa-home fa-2x"></i> Room # 601, Boys' Hostel 3A, Lovely Professional University, Punjab 144411</li><hr>
+							<li><i class="fa fa-phone fa-2x"></i> +919872421830</li><hr>
+							<li><i class="fa fa-envelope fa-2x"></i> 2018wecare@gmail.com</li>
 						</ul>
 					</div>
 					
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">					
-						<form class="form-inline">
-							
-						</form>
+						<form action=""  method="post" >
+							<div class="form-group">
+								<input type="name" class="form-control" name="first_name" id="firstName" placeholder="firstName">						<input type="name" class="form-control" name="last_name" id="lastName" placeholder="lastName">							
+	
+							</div>
+							<div class="form-group">							
+								<input type="email" id="email" class="form-control" name="email" id="InputEmail1" placeholder="email">
+							</div>
 						
-						<form>	
-							
-						</form>
+						
+					
+							<div class="form-group">
+								<input type="subject" class="form-control" name="subject" placeholder="Subject" id="subject">
+							</div>						
+							<textarea class="form-control" rows="5" id="mailbody" name="message"></textarea>							
+							<div class="form-group">
+								<button type="submit" name="submit" class="btn btn-primary btn-lg" required="required" id="sendmail" name="submit">Submit Message</button>
+							</div>
+						</form>						
 					</div>	
 				</div>
 			</div>
-		</div><!--/#contact-->					
+		</div><!--/#contact-->	
+		
+						
+														
 		<div class="container">
 			<div class="sub-footer">
 				<div class="text-center">
@@ -175,6 +259,9 @@
             -->
 		</div>									
 	</footer>
+   
+   
+   
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-2.1.1.min.js"></script>		
     <!-- Include all compiled plugins (below), or include individual files as needed -->

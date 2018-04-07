@@ -59,7 +59,7 @@ if(isset($_POST['submit'])){
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php">WeCare</a>
+                    <a class="navbar-brand" href="index2.php">WeCare</a>
                 </div>				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
@@ -363,7 +363,7 @@ if(isset($_POST['submit'])){
                             <li>ready to provide assistance</li>
                             
                             <li class="plan-action">
-                                <a href="donation.php" class="btn btn-primary">Report</a>
+                                <a href="reportingForm.php" class="btn btn-primary">Report</a>
                             </li>
                         </ul>
                     </div>
