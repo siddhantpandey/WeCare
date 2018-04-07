@@ -1,5 +1,8 @@
+<!--Include Database-->
 <?php include('server.php');?>
 
+
+<!--Send Email-->
 <?php 
 if(isset($_POST['submit'])){
     $to = "2018wecare@gmail.com"; // this is your Email address
@@ -24,6 +27,8 @@ if(isset($_POST['submit'])){
     }
 ?>
 
+<!--UI Design-->
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -47,6 +52,8 @@ if(isset($_POST['submit'])){
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+  
+  
   <body>	
 	<header id="header">
         <nav class="navbar navbar-fixed-top" role="banner">
@@ -74,6 +81,8 @@ if(isset($_POST['submit'])){
             </div><!--/.container-->
         </nav><!--/nav-->		
     </header><!--/header-->	
+    
+    
 	<div class="slider">		
 		<div id="about-slider">
 			<div id="carousel-slider" class="carousel slide" data-ride="carousel">
@@ -150,17 +159,17 @@ if(isset($_POST['submit'])){
 						</div>
 				    </div> 
 				</div>
-				
 				<a class="left carousel-control hidden-xs" href="#carousel-slider" data-slide="prev">
 					<i class="fa fa-angle-left"></i> 
 				</a>
-				
 				<a class=" right carousel-control hidden-xs"href="#carousel-slider" data-slide="next">
 					<i class="fa fa-angle-right"></i> 
 				</a>
 			</div> <!--/#carousel-slider-->
 		</div><!--/#about-slider-->
 	</div><!--/#slider-->
+	
+	
 	
 	<div id="feature">
 		<div class="container">
@@ -208,6 +217,8 @@ if(isset($_POST['submit'])){
 			</div>
 		</div>
 	</div>
+	
+	
 	
 	<div id="gallery">
 		<div class="container">
@@ -282,6 +293,7 @@ if(isset($_POST['submit'])){
 		</div>
 	</div><!--/#gallery-->
 
+
 	
 	<div id="pricing">
 		<div class="container">
@@ -302,8 +314,8 @@ if(isset($_POST['submit'])){
                             <li>Clothes</li>
                             <li>Utensils</li>
                             <li>Blankets</li>
-                            <li></li>
-                            <li></li>
+                            <li>Any little help</li>
+                            <li>means a lot</li>
                             <li class="plan-action">
                                 <a href="" class="btn btn-primary">Donate Now</a>
                             </li>
@@ -328,7 +340,6 @@ if(isset($_POST['submit'])){
                     </div>
 
                     <div class="col-sm-4 plan price-three wow fadeInDown" data-wow-offset="0" data-wow-delay="0.9s">
-                        <img src="img/ri.png">
                         <ul>
                             <li class="heading-three">
                                 <h2>Money</h2>
@@ -336,26 +347,28 @@ if(isset($_POST['submit'])){
                             </li>
                             <li>Any penny is a great help.</li>
                             <li>Donate for kids,</li>
-                            <li>olds, orphans</li>
-                            <li>and homeless</li>
-                            <li></li>
+                            <li>olds, orphans and homeless</li>
+                            <li>Small contribution</li>
+                            <li>means a world to them</li>
+                            
                             <li class="plan-action">
                                 <a href="donation.php" class="btn btn-primary">Donate</a>
                             </li>
                         </ul>
                     </div>
-
-                    <div class="col-sm-6 col-md-3 plan price-four wow fadeInLeft">
+                    <div class="col-sm-4 plan price-three wow fadeInDown" data-wow-offset="0" data-wow-delay="0.9s">
                         <ul>
-                            <li class="heading-four">
-                                <h2>Contribution</h2>
-                                <!--<span></span>-->
+                            <li class="heading-three">
+                                <h2>Persons of Interest</h2>
+                                <!--<span>$24/Month</span>-->
                             </li>
-                            <li>Picture</li>
-                            <li>Location</li>
-                            <li>Your Details</li>
+                            <li>See someone in need</li>
+                            <li>of help. Tell us.</li>
+                            <li>Our team is ever</li>
+                            <li>ready to provide assistance</li>
+                            
                             <li class="plan-action">
-                                <a href="form.php" class="btn btn-primary">Donate</a>
+                                <a href="donation.php" class="btn btn-primary">Report</a>
                             </li>
                         </ul>
                     </div>
@@ -416,6 +429,8 @@ if(isset($_POST['submit'])){
 		</div>
 	</div><!--/#pricing-->
 	
+	
+	
 	<div id="our-team">
 		<div class="container">
 			<div class="text-center">
@@ -450,6 +465,8 @@ if(isset($_POST['submit'])){
 			</div>
 		</div>
 	</div><!--/#our-team-->
+	
+	
 	
 	<footer>
 		<div id="contact">
@@ -502,7 +519,10 @@ if(isset($_POST['submit'])){
 					</div>	
 				</div>
 			</div>
-		</div><!--/#contact-->					
+		</div><!--/#contact-->	
+		
+						
+														
 		<div class="container">
 			<div class="sub-footer">
 				<div class="text-center">
@@ -545,6 +565,9 @@ if(isset($_POST['submit'])){
             -->
 		</div>									
 	</footer>
+   
+   
+   
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-2.1.1.min.js"></script>		
     <!-- Include all compiled plugins (below), or include individual files as needed -->

@@ -9,7 +9,8 @@
     <title>WeCare</title>
     
     <!-- Bootstrap -->
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+        <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/animate.css">
@@ -23,6 +24,8 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+  
+  
   <body>	
 	<header id="header">
         <nav class="navbar navbar-fixed-top" role="banner">
@@ -68,29 +71,29 @@
 						<h2></h2>
 						<ul>
 						<form action="login.php" method="post">
-            <!-- display validation errors here -->
-           <?php include('errors.php');  ?>
-               
-            <div class="input-group">
-                <label>Username</label>
-                <input type="text" name="username">
-                
-            </div>
-            
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" name="password">
-                
-            </div>
-            
-            <div class="input-group">
-                <button type="submit" name="login" class="btn">Login</button>
-            </div>
-            <p>
-                Not yet a member? <a href="register.php">Sign up</a>
-            </p>
-        </form>
-						</ul>
+                            <!-- display validation errors here -->
+                           <?php include('errors.php');  ?>
+
+                            <div class="input-group">
+                                <label>Username</label>
+                                <input type="text" name="username">
+
+                            </div>
+
+                            <div class="input-group">
+                                <label>Password</label>
+                                <input type="password" name="password">
+
+                            </div>
+
+                            <div class="input-group">
+                                <button type="submit" name="login" class="btn">Login</button>
+                            </div>
+                            <p>
+                                Not yet a member? <a href="register.php">Sign up</a>
+                            </p>
+                        </form>
+				        </ul>
 					</div>
 					
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">					
