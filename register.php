@@ -1,14 +1,107 @@
-<?php include('server.php');?>
+<?php
+// Include config file
+require_once 'config.php';
+ 
+// Define variables and initialize with empty values
+$username = $password = $confirm_password = "";
+$username_err = $password_err = $confirm_password_err = "";
+ 
+// Processing form data when form is submitted
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+ 
+    // Validate username
+    if(empty(trim($_POST["username"]))){
+        $username_err = "Please enter a username.";
+    } else{
+        // Prepare a select statement
+        $sql = "SELECT id FROM users WHERE username = ?";
+        
+        if($stmt = mysqli_prepare($link, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
+            
+            // Set parameters
+            $param_username = trim($_POST["username"]);
+            
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                /* store result */
+                mysqli_stmt_store_result($stmt);
+                
+                if(mysqli_stmt_num_rows($stmt) == 1){
+                    $username_err = "This username is already taken.";
+                } else{
+                    $username = trim($_POST["username"]);
+                }
+            } else{
+                echo "Oops! Something went wrong. Please try again later.";
+            }
+        }
+         
+        // Close statement
+        mysqli_stmt_close($stmt);
+    }
+    
+    // Validate password
+    if(empty(trim($_POST['password']))){
+        $password_err = "Please enter a password.";     
+    } elseif(strlen(trim($_POST['password'])) < 6){
+        $password_err = "Password must have atleast 6 characters.";
+    } else{
+        $password = trim($_POST['password']);
+    }
+    
+    // Validate confirm password
+    if(empty(trim($_POST["confirm_password"]))){
+        $confirm_password_err = 'Please confirm password.';     
+    } else{
+        $confirm_password = trim($_POST['confirm_password']);
+        if($password != $confirm_password){
+            $confirm_password_err = 'Password did not match.';
+        }
+    }
+    
+    // Check input errors before inserting in database
+    if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
+        
+        // Prepare an insert statement
+        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+         
+        if($stmt = mysqli_prepare($link, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
+            
+            // Set parameters
+            $param_username = $username;
+            $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+            
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                // Redirect to login page
+                header("location: login.php");
+            } else{
+                echo "Something went wrong. Please try again later.";
+            }
+        }
+         
+        // Close statement
+        mysqli_stmt_close($stmt);
+    }
+    
+    // Close connection
+    mysqli_close($link);
+}
+?>
 
-<html lang="en">
+
+ <html lang="en">
   <head>
+   
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>WeCare</title>
-    
-    <!-- Bootstrap -->
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -16,13 +109,13 @@
 	<link rel="stylesheet" href="css/overwrite.css">
 	<link href="css/animate.min.css" rel="stylesheet"> 
 	<link href="css/style.css" rel="stylesheet" />	
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <style type="text/css">
+        body{ font: 14px sans-serif; }
+        .wrapper{ width: 350px; padding: 20px; }
+    </style>
   </head>
+  
+  
   <body>	
 	<header id="header">
         <nav class="navbar navbar-fixed-top" role="banner">
@@ -34,83 +127,107 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">WeCare</a>
+                    <a class="navbar-brand" href="index.php">WeCare</a>
                 </div>				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">Home</a></li>
-                        <li><a href="login.php">Log In</a></li>                       
+                          
+                        <li><a href="login.php">Log In</a></li>                     
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->		
     </header><!--/header-->	
    
+   <!--Sign Up Form-->
+   <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+   <center>
+    <div class="wrapper">
+        <h2>Sign Up</h2>
+        <p>Please fill this form to create an account.</p>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                <label>Username</label>
+                <input type="text" name="username"class="form-control" value="<?php echo $username; ?>">
+                <span class="help-block"><?php echo $username_err; ?></span>
+            </div>    
+            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
+                <span class="help-block"><?php echo $password_err; ?></span>
+            </div>
+            <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+                <label>Confirm Password</label>
+                <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
+                <span class="help-block"><?php echo $confirm_password_err; ?></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Submit">
+                <input type="reset" class="btn btn-default" value="Reset">
+            </div>
+            <p>Already have an account? <a href="login.php">Login here</a>.</p>
+        </form>
+    </div>    
+      </center>
    
    
-   <footer>
+   
+  <footer>
 		<div id="contact">
 			<div class="container">
 				<div class="text-center">
-					<h3>Sign Up</h3>
-					<p></p>
+					<h3>Contact Us</h3>
+					<p>Feel free to contact us any time</p>
 				</div>
 			</div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.2s">
-						<h2></h2>
-						<p></p>				
+						<h2>Contact us any time</h2>
+						<p>In a elit in lorem congue varius. Sed nec arcu.
+						Etiam sit amet augue.
+						Fusce fermen tum neque a rutrum varius odio pede 
+						ullamcorp-er tellus ut dignissim nisi risus non tortor.
+						Aliquam mollis neque.</p>				
 					</div>				
 					
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.4s">
-						<h2></h2>
+						<h2>Contact Info</h2>
 						<ul>
-						 <form action="register.php" method="post">
-           <!-- display validation errors here -->
-           <?php include('errors.php');  ?>
-            <div class="input-group">
-                <label>Username</label>
-                <input type="text" name="username" value="<?php echo $username; ?>">
-                
-            </div>
-            <div class="input-group">
-                <label>Email</label>
-                <input type="text" name="email" value="<?php echo $email; ?>">
-                
-            </div>
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" name="password_1">
-                
-            </div>
-            <div class="input-group">
-                <label>Confirm Password</label>
-                <input type="password" name="password_2">
-                
-            </div>
-            <div class="input-group">
-                <button type="submit" name="register" class="btn">Register</button>
-            </div>
-            <p>
-                Already a member? <a href="login.php">Sign in</a>
-            </p>
-        </form>
+							<li><i class="fa fa-home fa-2x"></i> Room # 601, Boys' Hostel 3A, Lovely Professional University, Punjab 144411</li><hr>
+							<li><i class="fa fa-phone fa-2x"></i> +919872421830</li><hr>
+							<li><i class="fa fa-envelope fa-2x"></i> 2018wecare@gmail.com</li>
 						</ul>
 					</div>
 					
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">					
-						<form class="form-inline">
-							
-						</form>
+						<form action=""  method="post" >
+							<div class="form-group">
+								<input type="name" class="form-control" name="first_name" id="firstName" placeholder="firstName">						<input type="name" class="form-control" name="last_name" id="lastName" placeholder="lastName">							
+	
+							</div>
+							<div class="form-group">							
+								<input type="email" id="email" class="form-control" name="email" id="InputEmail1" placeholder="email">
+							</div>
 						
-						<form>	
-							
-						</form>
+						
+					
+							<div class="form-group">
+								<input type="subject" class="form-control" name="subject" placeholder="Subject" id="subject">
+							</div>						
+							<textarea class="form-control" rows="5" id="mailbody" name="message"></textarea>							
+							<div class="form-group">
+								<button type="submit" name="submit" class="btn btn-primary btn-lg" required="required" id="sendmail" name="submit">Submit Message</button>
+							</div>
+						</form>						
 					</div>	
 				</div>
 			</div>
-		</div><!--/#contact-->					
+		</div><!--/#contact-->	
+		
+						
+														
 		<div class="container">
 			<div class="sub-footer">
 				<div class="text-center">
@@ -153,6 +270,9 @@
             -->
 		</div>									
 	</footer>
+   
+   
+   
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-2.1.1.min.js"></script>		
     <!-- Include all compiled plugins (below), or include individual files as needed -->

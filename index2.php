@@ -69,8 +69,7 @@ if(isset($_POST['submit'])){
                         <li><a href="#pricing">Care & Share</a></li>
                         <li><a href="#our-team">Our Team</a></li> 
                         <li><a href="#contact">Contact</a></li>
-                        <li>
-                            <div class="page-header"><p><a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a></p></div></li>          
+                        <li><a href="login.php">Login</a></li>          
                     </ul>
                 </div>
             </div><!--/.container-->
