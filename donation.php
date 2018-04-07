@@ -1,5 +1,5 @@
-(<?php include('server.php');
-  ?>)
+<?php include('connect.php');
+  ?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -60,7 +60,7 @@
 			<div class="row">
 				<figure class="effect-chico">
 						<div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-							<a href="img/donation/p1.jpg" class="flipLightBox">
+							<a href="begger.php" class="flipLightBox">
 							<img src="img/donation/p1.jpg" class="img-responsive" alt="" height="1600px" width="1400px" title="Beggar Kids">
 							
 							</a>
@@ -68,7 +68,7 @@
 					</figure>
 				<figure class="effect-chico">
 						<div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-							<a href="img/donation/p2.jpg" class="flipLightBox">
+							<a href="street.php" class="flipLightBox">
 							<img src="img/donation/p2.jpg" class="img-responsive" alt="" title="Homeless">
 							
 							</a>
@@ -76,7 +76,7 @@
 					</figure>	
 				<figure class="effect-chico">
 						<div class="col-md-3 wow fadeInDown" data-wow-offset="0" data-wow-delay="0.3s">
-							<a href="img/donation/p3.jpg" class="flipLightBox">
+							<a href="skl.php" class="flipLightBox">
 							<img src="img/donation/p3.jpg" class="img-responsive" alt="" title="Schooling">
 							
 							</a>
@@ -84,7 +84,7 @@
 					</figure>
 				<figure class="effect-chico">
 						<div class="col-md-3 wow fadeInDown" data-wow-offset="0" data-wow-delay="0.3s">
-							<a href="img/donation/p4.jpg" class="flipLightBox">
+							<a href="childlab.php" class="flipLightBox">
 							<img src="img/donation/p4.jpg" class="img-responsive" alt="" title="Child Labour">
 							
 							</a>
