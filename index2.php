@@ -493,7 +493,7 @@ if(isset($_POST['submit'])){
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">					
 						<form action=""  method="post" >
 							<div class="form-group">
-								<input type="name" class="form-control" name="first_name" id="firstName" placeholder="firstName">						<input type="name" class="form-control" name="last_name" id="lastName" placeholder="lastName">							
+								<input type="name" class="form-control" name="first_name" id="first_name" placeholder="firstName">				<input type="name" class="form-control" name="last_name" id="last_name" placeholder="lastName">							
 	
 							</div>
 							<div class="form-group">							
@@ -507,7 +507,7 @@ if(isset($_POST['submit'])){
 							</div>						
 							<textarea class="form-control" rows="5" id="mailbody" name="message"></textarea>							
 							<div class="form-group">
-								<button type="submit" name="submit" class="btn btn-primary btn-lg" required="required" id="sendmail" name="submit">Submit Message</button>
+								<button type="submit" name="submit" class="btn btn-primary btn-lg" required="required" id="submit">Submit Message</button>
 							</div>
 						</form>						
 					</div>	
