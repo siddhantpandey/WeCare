@@ -68,10 +68,7 @@
 					</figure>
 				<figure class="effect-chico">
 						<div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-							<a href="street.php" class="flipLightBox">
-							<img src="img/donation/p2.jpg" class="img-responsive" alt="" title="Homeless">
-							
-							</a>
+							<a href="street.php" class="flipLightBox"><img src="img/donation/p2.jpg" class="img-responsive" alt="" title="Homeless"></a>
 						</div>
 					</figure>	
 				<figure class="effect-chico">
