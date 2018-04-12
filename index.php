@@ -1,27 +1,5 @@
 <!--Send Email-->
-<?php 
-if(isset($_POST['submit'])){
-    $to = "2018wecare@gmail.com"; // this is your Email address
-    $from = $_POST['email']; // this is the sender's Email address
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $subject = "Form submission";
-    $subject2 = "Copy of your form submission";
-    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
-    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
 
-    $headers = "From:" . $from;
-    $headers2 = "From:" . $to;
-    mail($to,$subject,$message,$headers);
-    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
-    echo "<script>
-    alert('Mail Sent. Thank you, we will contact you shortly.');
-   
-    </script>";
-   // echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
-    // You can also use header('Location: thank_you.php'); to redirect to another page.
-    }
-?>
 
 <!--UI Design-->
 
@@ -368,57 +346,7 @@ if(isset($_POST['submit'])){
                         </ul>
                     </div>
 
-                    <!--<div class="col-sm-6 col-md-3 plan price-five wow fadeInLeft">
-                        <ul>
-                            <li class="heading-five">
-                                <h2></h2>
-                                <span></span>
-                            </li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li class="plan-action">
-                                <a href="" class="btn btn-primary"></a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 plan price-six wow fadeInRight">
-                         <img src="img/rib.png">
-                        <ul>
-                            <li class="heading-six">
-                                <h2></h2>
-                                <span></span>
-                            </li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li class="plan-action">
-                                <a href="" class="btn btn-primary"></a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 plan price-seven wow fadeInRight">
-                        <ul>
-                            <li class="heading-seven">
-                                <h2></h2>
-                                <span></span>
-                            </li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li class="plan-action">
-                                <a href="" class="btn btn-primary"></a>
-                            </li>
-                        </ul>
-                    </div>-->
+                   
                 </div>
             </div><!--/pricing-area-->			
 		</div>
@@ -430,7 +358,6 @@ if(isset($_POST['submit'])){
 		<div class="container">
 			<div class="text-center">
 				<h3>Our Team</h3>
-				<!--<p>Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit<br>amet consectetur adipisicing elit</p>-->
 			</div>
 			<div class="row">
 				<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
@@ -492,7 +419,7 @@ if(isset($_POST['submit'])){
 					</div>
 					
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">					
-						<form action=""  method="post" >
+						<form action="acknowledge.php"  method="post" >
 							<div class="form-group">
 								<input type="name" class="form-control" name="first_name" id="firstName" placeholder="firstName">						<input type="name" class="form-control" name="last_name" id="lastName" placeholder="lastName">							
 	
@@ -508,7 +435,7 @@ if(isset($_POST['submit'])){
 							</div>						
 							<textarea class="form-control" rows="5" id="mailbody" name="message"></textarea>							
 							<div class="form-group">
-								<button type="submit" name="submit" class="btn btn-primary btn-lg" required="required" id="sendmail" name="submit">Submit Message</button>
+								<button type="submit" class="btn btn-primary btn-lg" required="required" id="send" name="send">Submit Message</button>
 							</div>
 						</form>						
 					</div>	

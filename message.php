@@ -10,6 +10,6 @@
 </body>
 </html>
 <?php
-    echo "<center><alert>You will be redirected int 5 seconds..</alert></center>";
+    echo "<center><alert>You will be redirected in 5 seconds..</alert></center>";
   header( "refresh:5; url=index2.php" ); 
 ?>
