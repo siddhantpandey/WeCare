@@ -25,6 +25,27 @@
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 350px; padding: 20px; }
+        #storyboard1 {
+        border-radius: 25px;
+        background: #f4f442;
+        padding: 20px; 
+
+        display: inline-block;
+        }
+        #storyboard2 {
+        border-radius: 25px;
+        background: #ff99ff;
+        padding: 20px; 
+
+        display: inline-block;
+        }
+            #storyboard {
+        border-radius: 25px;
+        border: 2px solid #73AD21;
+        padding: 20px; 
+        display: inline-block;
+        }
+        
     </style>
 
 	
@@ -86,14 +107,40 @@
 							}
 
 					?>
-
-
-
 				</table>
 				</center>
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/>
 			<!--</section> -->
 		</div>
+		<br/><br/>
+		<div id="storyboard">
+	<div id="storyboard1">
+	    <p>There are approximately 78 million homeless people in India, with over 11 million children. Often people come to metro cities in search of work but end up without a job, a home and often – penniless. That is what gives birth to beggars and illegal slums. According to the Indian government in 2015, there are over 4 lakh beggars in India with 81,000 belonging to West Bengal. There are 4,13,670 beggars exactly- 2.2 lakh males and 1.91 lakh females. The Bombay Prevention of Begging Act, 1959 was the one of the first provisions to criminalise begging. It did not just make begging an offence but also asked for detention, training and employment of the beggars so they can be taken off the streets.</p>    
+	</div>
+      <br><br>
+  <div id="storyboard1">
+     <p>India has an estimated one million or more street children in each of the following cities: New Delhi, Kolkata, and Mumbai.[2] Mainly because of family conflict, they come to live on the streets and take on the full responsibilities of caring for themselves, including working to provide for and protecting themselves. Though street children do sometimes band together for greater security, they are often exploited by employers and the police.</p>
+      </div>
+      
+      
+      </div>
+      <br/><br/>
+      <div id="storyboard">
+	<div id="storyboard2">
+	    <p></p>    
+	</div>
+      <br><br>
+  <div id="storyboard2">
+     <p></p>
+      </div>
+      <br/><br/>
+      <div id="storyboard2">
+     <p></p>
+      </div>
+      
+      </div>
+		
+		
 		
 		<footer>
 		<div id="contact">

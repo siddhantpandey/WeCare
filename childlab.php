@@ -23,6 +23,26 @@
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 350px; padding: 20px; }
+        #storyboard1 {
+        border-radius: 25px;
+        background: #f4f442;
+        padding: 20px; 
+
+        display: inline-block;
+        }
+        #storyboard2 {
+        border-radius: 25px;
+        background: #ff99ff;
+        padding: 20px; 
+
+        display: inline-block;
+        }
+            #storyboard {
+        border-radius: 25px;
+        border: 2px solid #73AD21;
+        padding: 20px; 
+        display: inline-block;
+        }
     </style>
 
 	
