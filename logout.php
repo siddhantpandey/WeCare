@@ -6,9 +6,10 @@ session_start();
 $_SESSION = array();
  
 // Destroy the session.
-session_destroy();
+$_SESSION['username']=null;
+$_SESSION['password']=null;
  
 // Redirect to login page
-header("location: index2.php");
+header("location: index.php");
 exit;
 ?>

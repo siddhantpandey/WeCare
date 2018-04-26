@@ -1,59 +1,4 @@
-<!--Send Email-->
-
-
-<!--UI Design-->
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>WeCare</title>
-    
-    <!-- Bootstrap -->
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/overwrite.css">
-	<link href="css/animate.min.css" rel="stylesheet"> 
-	<link href="css/style.css" rel="stylesheet" />	
-    <style type="text/css">
-        body{ font: 14px sans-serif; text-align: center; }
-    </style>
-  </head>
-  
-  
-  <body>	
-	<header id="header">
-        <nav class="navbar navbar-fixed-top" role="banner">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index2.php">WeCare</a>
-                </div>				
-                <div class="collapse navbar-collapse navbar-right">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#header">Home</a></li>
-                        <li><a href="#feature">Feature</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#pricing">Care & Share</a></li>
-                        <li><a href="#our-team">Our Team</a></li> 
-                        <li><a href="#contact">Contact</a></li>
-                        <li>
-                            <div class="page-header"><p><a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a></p></div></li>          
-                    </ul>
-                </div>
-            </div><!--/.container-->
-        </nav><!--/nav-->		
-    </header><!--/header-->	
+<?php include"myheader.php";?>
     
     <br/><br/><br/>
 	<div class="slider">		
@@ -129,12 +74,10 @@
 					<h3>Recent Activities</h3>
 					<p>Some of the activities undertaken by WeCare recently.<br></p>
 				</div>
-				<ul style="disc">
-				    <li>2 kids rescued from a hotel in Jalandhar.</li>
-				    <li>3 homeless men moved into night shelters in Phagwara</li>
-				    <li>Construction site workers' kids registered into day school</li>
-				    <li>Mattresses supplied to Chhaya Oldage Home, Phagwara</li>
-				</ul>
+				    <div class="well bg-success">2 kids rescued from a hotel in Jalandhar.</div>
+				    <div class="well bg-success">3 homeless men moved into night shelters in Phagwara</div>
+				    <div class="well bg-success">Construction site workers' kids registered into day school</div>
+				    <div class="well bg-success">Mattresses supplied to Chhaya Oldage Home, Phagwara</div>
 				
 				
 				
@@ -241,7 +184,7 @@
                             <li>Any little help</li>
                             <li>means a lot</li>
                             <li class="plan-action">
-                                <a href="" class="btn btn-primary">Donate Now</a>
+                                <a href="donation.php?indicator=1" class="btn btn-primary btn-danger btn-lg" style="width:200px; height:30px; padding:8px; font-size:12px ;border-radius:5px;">Donate Now</a>
                             </li>
                         </ul>
                     </div>
@@ -258,7 +201,7 @@
                             <li>We'll pickit up.</li>
                             <li>24/7 Support</li>
                             <li class="plan-action">
-                                <a href="" class="btn btn-primary">Schedule Pick Up</a>
+                                <a href="donation.php?indicator=1" class="btn btn-primary btn-success btn-lg" style="width:200px; height:30px; padding:8px; font-size:12px ;border-radius:5px;">Schedule Pick Up</a>
                             </li>
                         </ul>
                     </div>
@@ -276,13 +219,13 @@
                             <li>means a world to them</li>
                             
                             <li class="plan-action">
-                                <a href="donation.php" class="btn btn-primary">Donate</a>
+                                <a href="donation.php?indicator=1" class="btn btn-primary  btn-lg  btn-warning" style="width:200px; height:30px; padding:8px; font-size:12px ;border-radius:5px;" >Donate</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="col-sm-4 plan price-three wow fadeInDown" data-wow-offset="0" data-wow-delay="0.9s">
+                    <div class="col-sm-4 plan price-three wow fadeInDown " data-wow-offset="0" data-wow-delay="0.9s">
                         <ul>
-                            <li class="heading-three">
+                            <li class="heading-three bg-info">
                                 <h2>Persons of Interest</h2>
                                 <!--<span>$24/Month</span>-->
                             </li>
@@ -292,7 +235,7 @@
                             <li>ready to provide assistance</li>
                             
                             <li class="plan-action">
-                                <a href="reportingForm.php" class="btn btn-primary">Report</a>
+                                <a href="reportingForm.php?indicator=1" class="btn btn-primary   btn-lg  btn-info" style="width:200px; height:30px; padding:8px; font-size:12px ;border-radius:5px;">Report</a>
                             </li>
                         </ul>
                     </div>

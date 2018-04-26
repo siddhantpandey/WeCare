@@ -37,5 +37,5 @@
 </html>
 <?php
     echo "<center><alert>You will be redirected in 5 seconds..</alert></center>";
-  header( "refresh:5; url=index2.php" ); 
+  header( "refresh:5; url=index.php" ); 
 ?>

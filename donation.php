@@ -1,79 +1,7 @@
 <?php include('connect.php');
+include "myheader.php"
   ?>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>WeCare</title>
-    
-    <!-- Bootstrap -->
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/overwrite.css">
-	<link href="css/animate.min.css" rel="stylesheet"> 
-	<link href="css/style.css" rel="stylesheet" />	
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <style>
-      #storyboard1 {
-    border-radius: 25px;
-    background: #f4f442;
-    padding: 20px; 
-    
-    display: inline-block;
-    }
-    #storyboard2 {
-    border-radius: 25px;
-    background: #ff99ff;
-    padding: 20px; 
-    
-    display: inline-block;
-    }
-        #storyboard {
-    border-radius: 25px;
-    border: 2px solid #73AD21;
-    padding: 20px; 
-    display: inline-block;
-    }
 
-    </style>
-  </head>
-  <body>	
-	<header id="header">
-        <nav class="navbar navbar-fixed-top" role="banner">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html">WeCare</a>
-                </div>				
-                <div class="collapse navbar-collapse navbar-right">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.php">Home</a></li>
-                        <li><a href="#feature">Feature</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#pricing">Care & Share</a></li>
-                        <li><a href="#our-team">Our Team</a></li> 
-                        <li><a href="#contact">Contact</a></li>   
-                        <li><a href="login.php">Log In</a></li>                     
-                    </ul>
-                </div>
-            </div><!--/.container-->
-        </nav><!--/nav-->		
-    </header><!--/header-->	
-  
    <div id="gallery">
 		<div class="container">
 			<div class="text-center">
@@ -82,38 +10,48 @@
 			</div>
 			<div class="row">
 				<figure class="effect-chico">
-						<div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-						
-							<a href="begger.php" id="begger" class="flipLightBox" onclick="document.location=this.id+'.php';return false;">
-							<img src="img/donation/p1.jpg" class="img-responsive" alt="" height="1600px" width="1400px" title="Beggar Kids">
-							
-							</a>
-						</div>
-					</figure>
-					
-				<figure class="effect-chico">
-						<div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-							<a href="street.php" id="street" class="flipLightBox" onclick="document.location=this.id+'.php';return false;"><img src="img/donation/p2.jpg" class="img-responsive" alt="" title="Homeless"></a>
-						</div>
-					</figure>	
-					
-				<figure class="effect-chico">
-						<div class="col-md-3 wow fadeInDown" data-wow-offset="0" data-wow-delay="0.3s">
-							<a href="skl.php" class="flipLightBox" id="skl" onclick="document.location=this.id+'.php';return false;">
-							<img src="img/donation/p3.jpg" class="img-responsive" alt="" title="Schooling">
-							
-							</a>
-						</div>
-					</figure>
-					
-				<figure class="effect-chico">
-						<div class="col-md-3 wow fadeInDown" data-wow-offset="0" data-wow-delay="0.3s">
-							<a href="childlab.php" class="flipLightBox" id="childlab" onclick="document.location=this.id+'.php';return false;">
-							<img src="img/donation/p4.jpg" class="img-responsive" alt="" title="Child Labour">
-							
-							</a>
-						</div>
-					</figure>
+                    <a href="begger.php?indicator=1" id="begger" class="flipLightBox" onclick="document.location=this.id+'.php';return false;">
+                        <div class="view overlay" style="width:250px;">
+                            <img src="img/donation/p1.jpg" class="img-fluid " style="width:250px;" alt="">
+                            <div class="mask flex-center rgba-red-strong">
+                                <p class="white-text">Beggar Kids</p>
+                            </div>
+                        </div>
+                    </a>
+				</figure>
+                    
+                <figure class="effect-chico">
+                    <a href="street.php?indicator=1" id="begger" class="flipLightBox" onclick="document.location=this.id+'.php';return false;">
+                        <div class="view overlay" style="width:250px;">
+                            <img src="img/donation/p2.jpg" class="img-fluid " style="width:250px;" alt="">
+                            <div class="mask flex-center rgba-red-strong">
+                                <p class="white-text">Homeless</p>
+                            </div>
+                        </div>
+                    </a>
+				</figure>
+                    
+                <figure class="effect-chico">
+                    <a href="skl.php?indicator=1" id="begger" class="flipLightBox" onclick="document.location=this.id+'.php';return false;">
+                        <div class="view overlay" style="width:250px;">
+                            <img src="img/donation/p3.jpg" class="img-fluid " style="width:250px;" alt="">
+                            <div class="mask flex-center rgba-red-strong">
+                                <p class="white-text">Schooling</p>
+                            </div>
+                        </div>
+                    </a>
+				</figure>
+                    
+                <figure class="effect-chico">
+                    <a href="childlab.php" id="begger" class="flipLightBox" onclick="document.location=this.id+'.php';return false;">
+                        <div class="view overlay" style="width:250px;">
+                            <img src="img/donation/p4.jpg" class="img-fluid " style="width:250px;" alt="">
+                            <div class="mask flex-center rgba-red-strong">
+                                <p class="white-text">Child Labour</p>
+                            </div>
+                        </div>
+                    </a>
+				</figure>
 			</div>
 		</div>
 		
