@@ -55,7 +55,7 @@
         </nav><!--/nav-->		
     </header><!--/header-->	
     
-    
+    <br/><br/><br/>
 	<div class="slider">		
 		<div id="about-slider">
 			<div id="carousel-slider" class="carousel slide" data-ride="carousel">
@@ -68,66 +68,44 @@
 
 				<div class="carousel-inner">
 					<div class="item active">						
-						<img src="img/7.jpg" class="img-responsive" alt=""> 
+						<img src="img/7.jpg" class="img-responsive" alt="" width="100%" height="50"> 
 						<div class="carousel-caption">
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">								
-								<h2><span>Clean & Fully Modern Design</span></h2>
+								<h2><span></span></h2>
 							</div>
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">								
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+								<p></p>
 							</div>
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">								
-								<form class="form-inline">
-									<div class="form-group">
-										<button type="livedemo" name="Live Demo" class="btn btn-primary btn-lg" required="required">Live Demo</button>
-									</div>
-									<div class="form-group">
-										<button type="getnow" name="Get Now" class="btn btn-primary btn-lg" required="required">Donate Now</button>
-									</div>
-								</form>
+								
 							</div>
 						</div>
 				    </div>
 			
 				    <div class="item">
-						<img src="img/6.jpg" class="img-responsive" alt=""> 
+						<img src="img/6.jpg" class="img-responsive" alt="" width="100%" height="50"> 
 						<div class="carousel-caption">
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.0s">								
-								<h2>Fully Responsive</h2>
+								<h2></h2>
 							</div>
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.3s">								
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+								<p></p>
 							</div>
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.6s">								
-								<form class="form-inline">
-									<div class="form-group">
-										<button type="livedemo" name="purchase" class="btn btn-primary btn-lg" required="required">Live Demo</button>
-									</div>
-									<div class="form-group">
-										<button type="getnow" name="subscribe" class="btn btn-primary btn-lg" required="required">Donate Now</button>
-									</div>
-								</form>
 							</div>
 						</div>
 				    </div> 
 				    <div class="item">
-						<img src="img/1.jpg" class="img-responsive" alt=""> 
+						<img src="img/1.jpg" class="img-responsive" alt="" width="100%" height="50"> 
 						<div class="carousel-caption">
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">								
-								<h2>Modern Design</h2>
+								<h2></h2>
 							</div>
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">								
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+								<p></p>
 							</div>
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">								
-								<form class="form-inline">
-									<div class="form-group">
-										<button type="livedemo" name="purchase" class="btn btn-primary btn-lg" required="required">Live Demo</button>
-									</div>
-									<div class="form-group">
-										<button type="getnow" name="subscribe" class="btn btn-primary btn-lg" required="required">Donate Now</button>
-									</div>
-								</form>
+								
 							</div>
 						</div>
 				    </div> 
@@ -148,10 +126,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="text-center">
-					<h3>Features</h3>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit<br>amet consectetur adipisicing elit</p>
+					<h3>Recent Activities</h3>
+					<p>Some of the activities undertaken by WeCare recently.<br></p>
 				</div>
-				<div class="col-md-3 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
+				<!--<div class="col-md-3 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
 					<div class="text-center">
 						<div class="hi-icon-wrap hi-icon-effect">
 							<i class="fa fa-laptop"></i>						
@@ -187,6 +165,16 @@
 						</div>
 					</div>
 				</div>
+				-->
+				<ul style="disc">
+				    <li>2 kids rescued from a hotel in Jalandhar.</li>
+				    <li>3 homeless men moved into night shelters in Phagwara</li>
+				    <li>Construction site workers' kids registered into day school</li>
+				    <li>Mattresses supplied to Chhaya Oldage Home, Phagwara</li>
+				</ul>
+				
+				
+				
 			</div>
 		</div>
 	</div>

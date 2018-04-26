@@ -169,10 +169,10 @@ if(isset($_POST['submit'])){
 		<div class="container">
 			<div class="row">
 				<div class="text-center">
-					<h3>Features</h3>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit<br>amet consectetur adipisicing elit</p>
+					<h3>Recent Activities</h3>
+					<p>Some of the activities undertaken by WeCare recently.<br></p>
 				</div>
-				<div class="col-md-3 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
+				<!--<div class="col-md-3 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
 					<div class="text-center">
 						<div class="hi-icon-wrap hi-icon-effect">
 							<i class="fa fa-laptop"></i>						
@@ -208,6 +208,16 @@ if(isset($_POST['submit'])){
 						</div>
 					</div>
 				</div>
+				-->
+				<ul style="disc">
+				    <li>2 kids rescued from a hotel in Jalandhar.</li>
+				    <li>3 homeless men moved into night shelters in Phagwara</li>
+				    <li>Construction site workers' kids registered into day school</li>
+				    <li>Mattresses supplied to Chhaya Oldage Home, Phagwara</li>
+				</ul>
+				
+				
+				
 			</div>
 		</div>
 	</div>
@@ -362,7 +372,7 @@ if(isset($_POST['submit'])){
                             <li>ready to provide assistance</li>
                             
                             <li class="plan-action">
-                                <a href="donation.php" class="btn btn-primary">Report</a>
+                                <a href="reportingForm.php" class="btn btn-primary">Report</a>
                             </li>
                         </ul>
                     </div>

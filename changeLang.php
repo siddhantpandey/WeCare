@@ -1,19 +1,11 @@
 
-<!--WINTER-->
-
-
-<?php include('config.php');
-  ?>
-
-
-
-<html>
-<head>
-
+ <html lang="en">
+  <head>
+   
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Street</title>
+    <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
      <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 
@@ -26,48 +18,12 @@
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 350px; padding: 20px; }
-        #storyboard1 {
-        border-radius: 25px;
-        background: #f4f442;
-        padding: 20px; 
-
-        display: inline-block;
-        }
-        #storyboard2 {
-        border-radius: 25px;
-        background: #ff99ff;
-        padding: 20px; 
-
-        display: inline-block;
-        }
-            #storyboard {
-        border-radius: 25px;
-        border: 2px solid #73AD21;
-        padding: 20px; 
-        display: inline-block;
-        }
-
-        .button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-.button4 {border-radius: 12px;}
     </style>
-
-	
-
-</head>
-<body>
-    <header id="header">
+  </head>
+  
+  
+  <body>	
+	<header id="header">
         <nav class="navbar navbar-fixed-top" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -81,55 +37,33 @@
                 </div>				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.php">Home</a></li>
-                          
-                        <li><a href="login.php">Log In</a></li>                     
+                        <li class="active"><a href="index.php">Home</a></li>  
+                        <li><a href="login.php">Log In</a></li> 
+                        <li>
+                            <form>
+                                
+                            </form>
+                        </li>                    
                     </ul>
                 </div>
             </div><!--/.container-->
-        </nav><!--/nav-->		
+        </nav><!--/nav-->	
     </header><!--/header-->	
    
-   <!---->
-   <br/><br/><br/><br/><br/><br/>
-		<div id="wrapper" style="border-radius: 25px;background: url(img/paperback.jpg);background-position: left top;background-repeat: repeat;padding: 20px; width: 100%;height: 500px; ">
-			<!--<section id="content">-->
-				<center><table border="1"  width="75%" cell-padding="10" cellspacing="10" style="border-style:groove;margin-left:-70px;margin-top:50px;margin-bottom:100px;color:black;font-size:25;font-family:Courier">
-				    <h1 style="color:black">Homeless</h1>
-					<th>Location</th><th>Requirement</th>
-					
-					<?php
-
-			
-					$query="select * from street";
-			                $select_query=mysqli_query($link,$query);
-			                while ($row=mysqli_fetch_assoc($select_query)) 
-			                {
-			                
-
-							echo'<tr>
-							<td>'.$row['Location'].'</td>
-							<td>'.$row['Requirment'].'</td>
-							
-							</tr>';
-						
-
-							}
-
-					?>
-
-
-
-				</table>
-				<a href="report.php"><button class="button button4">Donate</button></a>
-				</center>
-
-			<!--</section> -->
-    
-		</div>
+   <!--Log In Form-->
    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+   <center>
+   <div class="wrapper">
+        <h2>Change Language</h2>
+        <p>Please fill in your credentials to login.</p>
+        <a href="?lan=en">&raquo; English</a>
+        <a href="?lan=hi">&raquo; Hindi</a>
+    </div>    
+      </center>
    
-    <footer>
+   
+   
+  <footer>
 		<div id="contact">
 			<div class="container">
 				<div class="text-center">

@@ -45,6 +45,21 @@
         padding: 20px; 
         display: inline-block;
         }
+
+        .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button4 {border-radius: 12px;}
         
     </style>
 
@@ -84,7 +99,7 @@
 			<!--<section id="content">-->
 				<table border="1"  width="75%" cell-padding="10" cellspacing="10" style="border-style: groove;margin-left:-70px;margin-top:50px;margin-bottom:100px;color:black;font-size:25;font-family:Courier">
                     <h1 style="color:black">Beggars</h1>
-					<th>Location</th><th>Requirement</th><th>Donate</th>
+					<th>Location</th><th>Requirement</th>
 					
 					<?php
 
@@ -99,7 +114,7 @@
 							<td>'.$row['Location'].'</td>
 							<td>'.$row['Requirment'].'</td>
 							
-							<td><a href="">Click to Donate</td>
+						
 							</tr>';
 							
 						
@@ -108,6 +123,7 @@
 
 					?>
 				</table>
+				<a href="report.php"><button class="button button4">Donate</button></a>
 				</center>
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/>
 			<!--</section> -->

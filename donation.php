@@ -90,13 +90,13 @@
 							</a>
 						</div>
 					</figure>
-					&ensp;
+					
 				<figure class="effect-chico">
 						<div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
 							<a href="street.php" id="street" class="flipLightBox" onclick="document.location=this.id+'.php';return false;"><img src="img/donation/p2.jpg" class="img-responsive" alt="" title="Homeless"></a>
 						</div>
 					</figure>	
-					&ensp;
+					
 				<figure class="effect-chico">
 						<div class="col-md-3 wow fadeInDown" data-wow-offset="0" data-wow-delay="0.3s">
 							<a href="skl.php" class="flipLightBox" id="skl" onclick="document.location=this.id+'.php';return false;">
@@ -105,7 +105,7 @@
 							</a>
 						</div>
 					</figure>
-					&ensp;
+					
 				<figure class="effect-chico">
 						<div class="col-md-3 wow fadeInDown" data-wow-offset="0" data-wow-delay="0.3s">
 							<a href="childlab.php" class="flipLightBox" id="childlab" onclick="document.location=this.id+'.php';return false;">
