@@ -185,11 +185,6 @@ Weddings, canteens, hotels, social and family functions, households spew out so 
 			<div class="copyright">
 				&copy; 2018 <a target="_blank" href="http://bootstraptaste.com/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">WeCare</a>. All Rights Reserved.
 			</div>
-            <!-- 
-                All links in the footer should remain intact. 
-                Licenseing information is available at: http://bootstraptaste.com/license/
-                You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Bikin
-            -->
 		</div>									
 	</footer>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
