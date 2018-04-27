@@ -56,7 +56,7 @@ $logined_password = $_SESSION['password'];
                        <?php
                         if(isset($_GET['indicator'])){
                           echo' <li class="active"><a href=index.php#header">Home</a></li>
-                        <li><a href="index.php#feature">Feature</a></li>
+                        <li><a href="index.php#bulletin">Bulletin</a></li>
                         <li><a href="index.php#gallery">Gallery</a></li>
                         <li><a href="index.php#pricing">Care & Share</a></li>
                         <li><a href="index.php#our-team">Our Team</a></li> 
@@ -65,7 +65,7 @@ $logined_password = $_SESSION['password'];
                         }
                         else{
                             echo'<li class="active"><a href="#header">Home</a></li>
-                        <li><a href="#feature">Feature</a></li>
+                        <li><a href="#bulletin">Bulletin</a></li>
                         <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#pricing">Care & Share</a></li>
                         <li><a href="#our-team">Our Team</a></li> 
