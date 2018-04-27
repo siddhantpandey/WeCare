@@ -9,7 +9,7 @@ include "myheader.php"
    <br/><br/><br/><br/><br/><br/>
 		<div id="wrapper" style="border-radius: 25px;background: url(img/paperback.jpg);background-position: left top;background-repeat: repeat;padding: 20px; width: 100%;height: 500px; ">
 			<!--<section id="content">-->
-				<center><table border="1"  width="75%" cell-padding="10" cellspacing="10" style="border-style:groove;margin-left:-70px;margin-top:50px;margin-bottom:100px;color:black;font-size:25;font-family:Courier">
+				<center><table border="1"  width="75%" height="200px" cell-padding="10" cellspacing="10" style="border-style: groove;margin-left:-70px;margin-top:50px;margin-bottom:100px;color:black;">
                     <h1 style="color:black">Child Labour</h1>
 					<th>Location</th><th>Requirement</th>
 					
@@ -37,7 +37,7 @@ include "myheader.php"
 
 
 				</table>
-				<a href="report.php?indicator=1"><button class="button button4">Donate</button></a>
+				<a href="report.php?indicator=1"><button class="btn btn-primary btn-warning btn-lg" style="width:200px; height:30px; padding:8px; font-size:12px ;border-radius:5px;">Donate</button></a>
 				</center>
 			<!--</section> -->
 		</div>

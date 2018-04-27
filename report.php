@@ -31,7 +31,7 @@ if(isset($_POST['submit']))
 
         <marquee><h2><b>For monetory donation we accept cheque in the name of charity of your choice only</b></h2></marquee>
         <p>Please fill in the credentials.</p>
-        <form action="report.php?indicator=1" method="post">
+        <form action="report.php?indicator=1" method="post" style="width:500px">
             <div >
                 <label>Firstname</label><br>
                 <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Firstname"><br>
