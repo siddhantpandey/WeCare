@@ -78,7 +78,7 @@ $logined_password = $_SESSION['password'];
                            
                            <?php
                             if(isset($_SESSION['username']) && !empty($_SESSION['username'])){
-                               echo'<p><a href="logout.php" class="btn btn-danger">' . $logined_username . '</a></p>'; 
+                               echo'<p><a href="logout.php?indicator=1" class="btn btn-danger">' . $logined_username . '</a></p>'; 
                             }
                             else{
                                 echo'<p><a href="login.php?indicator=1" class="btn btn-danger">Login</a></p>';

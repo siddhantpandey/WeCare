@@ -10,11 +10,7 @@
 				<div class="row">
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.2s">
 						<h2>Contact us any time</h2>
-						<p>In a elit in lorem congue varius. Sed nec arcu.
-						Etiam sit amet augue.
-						Fusce fermen tum neque a rutrum varius odio pede 
-						ullamcorp-er tellus ut dignissim nisi risus non tortor.
-						Aliquam mollis neque.</p>				
+						<p>Feel free to contact us at any time. Our team is ever ready to assist you.</p>				
 					</div>				
 					
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.4s">
@@ -27,7 +23,7 @@
 					</div>
 					
 					<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">					
-						<form action="acknowledge.php"  method="post" >
+						<form action="acknowledge.php?indicator=1"  method="post" >
 							<div class="form-group">
 								<input type="name" class="form-control" name="first_name" id="firstName" placeholder="firstName">						<input type="name" class="form-control" name="last_name" id="lastName" placeholder="lastName">							
 	
@@ -54,8 +50,8 @@
 			<div class="container">
 				<div class="col-md-6 col-md-offset-3">						
 					<ul class="social-network">
-						<li><a href="#" class="fb tool-tip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#" class="twitter tool-tip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="https://www.facebook.com/2018WeCare/" class="fb tool-tip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="https://twitter.com/2018wecare" class="twitter tool-tip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
 						<li><a href="#" class="gplus tool-tip" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
 						<!--<li><a href="#" class="linkedin tool-tip" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
 						<li><a href="#" class="ytube tool-tip" title="You Tube"><i class="fa fa-youtube-play"></i></a></li>
