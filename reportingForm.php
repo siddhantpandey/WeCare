@@ -60,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $result = mysqli_query($link,$sql);
         $message="Data submitted successfully. You will be redirected shortly.";
         echo "<script>alert('$message');</script>";
-        header("location: reportingForm.php?indicator=1");
+        header("location: index.php?indicator=1");
     }
     }
     // Close connection
