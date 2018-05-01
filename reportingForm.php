@@ -1,105 +1,83 @@
-<!--new-->
-
 <?php include('config.php'); ?>
+
+
 <?php
-// Define variables and initialize with empty values
-$name = $issue = $address = "";
+
+$name =  $address = $issue  = "";
 $aadhaar = $phone = 0;
-$name_err = $aadhaar_err =$phone_err = $address_err = $issue_err = "";
- 
-// Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
-    // Check if name is empty
-    if(empty(trim($_POST["name"]))){
+$name_err = $aadhaar_err = $phone_err = $address_err = $issue_err  = "";
+
+
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
+     if(empty(trim($_POST["name"]))){
         $name_err = 'Please enter name.';
     } else{
-        $name = trim($_POST["name"]);
+        $name = trim($_POST['name']);
     }
     
-    // Check if aadhaar is empty
-    if(empty(trim($_POST['aadhaar']))){
-        $aadhaar_err = 'Please enter aadhaar.';
+    if(empty(trim($_POST["aadhaar"]))){
+        $aadhaar_err = 'Please enter aadhaar no.';
     } else{
         $aadhaar = trim($_POST['aadhaar']);
     }
-    
-    // Check if phone is empty
-    if(empty(trim($_POST['phone']))){
+    if(empty(trim($_POST["phone"]))){
         $phone_err = 'Please enter phone.';
     } else{
         $phone = trim($_POST['phone']);
     }
-    
-    // Check if address is empty
-    if(empty(trim($_POST['address']))){
+    if(empty(trim($_POST["address"]))){
         $address_err = 'Please enter address.';
     } else{
         $address = trim($_POST['address']);
     }
-    
-    // Check if issue is empty
-    if(empty(trim($_POST['issue']))){
+    if(empty(trim($_POST["issue"]))){
         $issue_err = 'Please enter issue.';
     } else{
         $issue = trim($_POST['issue']);
     }
     $image = $_POST['fileToUpload'];
-    
-    
-    
-    if(empty($name_err) && empty($aadhaar_err) && empty($phone_err) && empty($address_err) && empty($issue_err)){
-    $sql = "INSERT into personsofinterest values('$name',$aadhaar,$phone,'$address','$issue','$image')";
-    $check = "SELECT aadhaar FROM  personsofinterest WHERE aadhaar=$aadhaar";
-    $result=mysqli_stmt_execute($check);
-    if(mysqli_stmt_num_rows($result)==1){
-        echo "Person already exists in database.";
-        header("location: reportingForm.php?indicator=1");
+    if(empty($name_err) && empty($aadhaar_err) && empty($phone_err) && empty($address_err) && empty($issue_err))
+    {
+        $sql = "INSERT into personsofinterest values('$name',$aadhaar,$phone,'$address','$issue','$image')";
+        $check = "SELECT aadhaar FROM  personsofinterest WHERE aadhaar=$aadhaar";
+        $checkresult=mysqli_stmt_execute($check);
+        
+        if(mysqli_stmt_num_rows($checkresult)==1)
+        {
+            echo "Person already exists in database.";
+            sleep(2);
+            header("location: reportingForm.php?indicator=1");
+        }
+        else
+        {
+
+            $result = mysqli_query($link,$sql);
+            echo $result;
+            $message="Data submitted successfully. You will be redirected shortly.";
+            echo "<script>alert('$message');</script>";
+            sleep(5);
+            if(!mysqli_error($result))
+                header("location: index.php?indicator=1");
+        }
     }
-    else{
-        $result = mysqli_query($link,$sql);
-        $message="Data submitted successfully. You will be redirected shortly.";
-        echo "<script>alert('$message');</script>";
-        header("location: index.php?indicator=1");
-    }
-    }
-    // Close connection
     mysqli_close($link);
 }
 ?>
 
-<?php
-            $target_dir = "uploads/";
-            $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-            $uploadOk = 1;
-            $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-            // Check if image file is a actual image or fake image
-            if(isset($_POST["submit"])) {
-               $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-                if($_FILES['file']['size']) {
-                    echo "File Uploaded ";
-                    $uploadOk = 1;
-                } else {
-                    echo "File upload failed";
-                    $uploadOk = 0;
-                }
-            }
-        ?>
-
-<?php include"myheader.php";?>
-
+<?php include"myheader.php"?>
    
    <!--Log In Form-->
-   <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+   <br/><br/><br/><br/><br/><br/><br/>
    <center>
    <div class="wrapper">
-        <h2>Person of Interest</h2>
+
+        <marquee><h2><b>For monetory donation we accept cheque in the name of charity of your choice only</b></h2></marquee>
         <p>Please fill in the credentials.</p>
-        <br/>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" style="width:500px">
+        <form action="reportingForm.php?indicator=1" method="post" style="width:500px">
             <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
                 <label>Name</label>
-                <input type="text" id="name" name="name"class="form-control" value="<?php echo $name; ?>" >
+                <input type="text" id="name" name="name"class="form-control">
                 <span class="help-block"><?php echo $name_err; ?></span>
             </div>
             <br/>    
@@ -129,7 +107,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <br/>
             <div class="form-group">
                 <label>Select image to upload:</label>
-                <input type="file" id="fileToUpload" name="fileToUpload" id="fileToUpload">
+                <input type="file" id="fileToUpload" name="fileToUpload">
             </div>
             <br/>
             <div class="form-group">
@@ -138,8 +116,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </form>
     </div>    
       </center>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
+   
+   
    <?php include"myfooter.php";?>

@@ -225,7 +225,7 @@
                     </div>
                     <div class="col-sm-4 plan price-three wow fadeInDown " data-wow-offset="0" data-wow-delay="0.9s">
                         <ul>
-                            <li class="heading-three bg-info">
+                            <li class="heading-three bg-danger">
                                 <h2>Persons of Interest</h2>
                                 <!--<span>$24/Month</span>-->
                             </li>
@@ -235,11 +235,26 @@
                             <li>ready to provide assistance</li>
                             
                             <li class="plan-action">
-                                <a href="reportingForm.php?indicator=1" class="btn btn-primary   btn-lg  btn-info" style="width:200px; height:30px; padding:8px; font-size:12px ;border-radius:5px;">Report</a>
+                                <a href="reportingForm.php?indicator=1" class="btn btn-primary   btn-lg  btn-danger" style="width:200px; height:30px; padding:8px; font-size:12px ;border-radius:5px;">Report</a>
                             </li>
                         </ul>
                     </div>
-
+                    <div class="col-sm-4 plan price-three wow fadeInDown " data-wow-offset="0" data-wow-delay="0.9s">
+                        <ul>
+                            <li class="heading-three bg-success">
+                                <h2>Volunteer to Teach</h2>
+                                <!--<span>$24/Month</span>-->
+                            </li>
+                            <li>We need volunteers</li>
+                            <li>willing to teach </li>
+                            <li>basic subjects to</li>
+                            <li>underprivileged kids.</li>
+                            
+                            <li class="plan-action">
+                                <a href="volunteer.php?indicator=1" class="btn btn-primary   btn-lg  btn-success" style="width:200px; height:30px; padding:8px; font-size:12px ;border-radius:5px;">Register as Volunteer</a>
+                            </li>
+                        </ul>
+                    </div>
                    
                 </div>
             </div><!--/pricing-area-->			

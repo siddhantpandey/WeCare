@@ -1,6 +1,5 @@
 <?php include('config.php'); ?>
 <?php
-
 $firstName = $lastName = $charity = $address = $time = $date = $place = "";
 $phone = 0;
 $firstName_err = $lastName_err = $phone_err = $address_err = $charity_err = $radio_err = $time_err = $date_err = $place_err = "";
