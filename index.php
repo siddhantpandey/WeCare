@@ -271,7 +271,7 @@
 			<div class="row">
 				<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
 					<div class="text-center">
-						<img src="img/team/1.png" alt="">
+						<img src="img/team/chavi.gif" alt="" width="180px" height="180px">
 						<h2>Mrs. Chavi Rahlan</h2>
 						<h4>Mentor</h4>
 						<p>Lecturer, Lovely Professional University</p>
@@ -279,7 +279,7 @@
 				</div>
 				<div class="col-md-4 wow bounceInDown" data-wow-offset="0" data-wow-delay="0.3s">
 					<div class="text-center">
-						<img src="img/team/2.png" alt="">
+						<img src="img/team/siddhant.gif" alt="" width="180px" height="180px">
 						<h2>Siddhant Pandey</h2>
 						<h4>Team Member</h4>
 						<p>Student, B.Tech., Lovely Professional University</p>
