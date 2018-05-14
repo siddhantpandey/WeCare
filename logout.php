@@ -10,6 +10,6 @@ $_SESSION['username']=null;
 $_SESSION['password']=null;
  
 // Redirect to login page
-header("location: index.php");
+header("location: index.php?indicator=1");
 exit;
 ?>

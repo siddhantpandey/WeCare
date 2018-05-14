@@ -1,5 +1,6 @@
 <!--Send Email-->
 <?php
+//session_name('header');
 session_start();
 $logined_username = $_SESSION['username'];
 $logined_password = $_SESSION['password'];
@@ -34,6 +35,7 @@ $logined_password = $_SESSION['password'];
     <style type="text/css">
         
         body{ font: 14px sans-serif; text-align: center; }
+        
     </style>
   </head>
   
@@ -81,7 +83,7 @@ $logined_password = $_SESSION['password'];
                                echo'<p><a href="logout.php?indicator=1" class="btn btn-danger">' . $logined_username . '</a></p>'; 
                             }
                             else{
-                                echo'<p><a href="login.php?indicator=1" class="btn btn-danger">Login</a></p>';
+                                echo'<p><a href="login.php?indicator=1" class="btn btn-danger">Login</a><a href="adminlogin.php?indicator=1" class="btn btn-danger">Admin</a></p>';
                             }
                             ?>
                             

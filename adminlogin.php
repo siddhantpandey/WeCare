@@ -15,14 +15,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
-        $username_err = 'Please enter username.';
+        $username_err = 'Please enter admin username.';
     } else{
         $username = trim($_POST["username"]);
     }
     
     // Check if password is empty
     if(empty(trim($_POST['password']))){
-        $password_err = 'Please enter your password.';
+        $password_err = 'Please enter your admin password.';
     } else{
         $password = trim($_POST['password']);
     }
@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT username, password FROM users WHERE username = ?";
+        $sql = "SELECT username, password FROM admin WHERE username = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -55,7 +55,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION['username'] = $username;   
                             $_SESSION['password'] = $password;      
 
-                            header("location: index.php?indicator=1");
+                            header("location: adminhome.php?indicator=1");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = 'The password you entered was not valid.';
@@ -86,18 +86,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
    <center>
    <div class="wrapper">
-        <h2>Login</h2>
-        <p>Please fill in your credentials to login.</p>
+        <h2>Admin-Login</h2>
+        <p>Please fill in your credentials to login as admin.</p>
         <br/><br/>
-        <form action="login.php?indicator=1" method="post" style="width:500px">
+        <form action="adminlogin.php?indicator=1" method="post" style="width:500px">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label>Username</label>
+                <label>Admin-Username</label>
                 <input type="text" name="username"class="form-control" value="<?php echo $username; ?>">
                 <span class="help-block"><?php echo $username_err; ?></span>
             </div> 
             <br/>   
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label>Password</label>
+                <label>Admin-Password</label>
                 <input type="password" name="password" class="form-control">
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
@@ -106,7 +106,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="submit" class="btn btn-primary btn-lg btn-success" value="Login">
             </div>
             <br/>
-            <p>Don't have an account? <a href="register.php?indicator=1">Sign up now</a>.</p>
+            <p>Don't have an account? <a href="adminregister.php?indicator=1">Sign up as admin now</a>.</p>
         </form>
     </div>    
       </center>

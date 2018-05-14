@@ -3,7 +3,7 @@
 
 <?php
 
-$name =  $address = $issue  = "";
+$name =  $address = $issue  = $image = "";
 $aadhaar = $phone = 0;
 $name_err = $aadhaar_err = $phone_err = $address_err = $issue_err  = "";
 
@@ -83,13 +83,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             <br/>    
             <div class="form-group <?php echo (!empty($aadhaar_err)) ? 'has-error' : ''; ?>">
                 <label>Aadhaar</label>
-                <input type="number" id="aadhaar" name="aadhaar" class="form-control">
+                <input type="number" id="aadhaar" name="aadhaar" class="form-control" pattern=".{12,}">
                 <span class="help-block"><?php echo $aadhaar_err; ?></span>
             </div>
             <br/>
             <div class="form-group <?php echo (!empty($phone_err)) ? 'has-error' : ''; ?>">
                 <label>Phone</label>
-                <input type="number" id="phone" name="phone" class="form-control">
+                <input type="tel" id="phone" name="phone" class="form-control">
                 <span class="help-block"><?php echo $phone_err; ?></span>
             </div>
             <br/>
@@ -107,7 +107,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             <br/>
             <div class="form-group">
                 <label>Select image to upload:</label>
-                <input type="file" id="fileToUpload" name="fileToUpload">
+                <input type="file" id="fileToUpload" name="fileToUpload" required>
             </div>
             <br/>
             <div class="form-group">

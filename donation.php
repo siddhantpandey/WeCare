@@ -11,7 +11,7 @@ include "myheader.php"
 			<div class="row">
 				<figure class="effect-chico">
                    <div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-                    <a href="begger.php?indicator=1" id="begger" class="flipLightBox" onclick="document.location=this.id+'.php';return false;">
+                    <a href="begger.php?indicator=1" id="begger" class="flipLightBox" onclick="document.location=this.id+'.php?indicator=1';return false;">
                         <div class="view overlay" style="width:250px;">
                             <img src="img/donation/p1.jpg" class="img-fluid " style="width:250px;" alt="">
                             <div class="mask flex-center rgba-red-strong">
@@ -24,7 +24,7 @@ include "myheader.php"
                     
                 <figure class="effect-chico">
                    <div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-                    <a href="street.php?indicator=1" id="begger" class="flipLightBox" onclick="document.location=this.id+'.php';return false;">
+                    <a href="street.php?indicator=1" id="street" class="flipLightBox" onclick="document.location=this.id+'.php?indicator=1';return false;">
                         <div class="view overlay" style="width:250px;">
                             <img src="img/donation/p2.jpg" class="img-fluid " style="width:250px;" alt="">
                             <div class="mask flex-center rgba-red-strong">
@@ -37,7 +37,7 @@ include "myheader.php"
                     
                 <figure class="effect-chico">
                    <div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-                    <a href="skl.php?indicator=1" id="begger" class="flipLightBox" onclick="document.location=this.id+'.php';return false;">
+                    <a href="skl.php?indicator=1" id="skl" class="flipLightBox" onclick="document.location=this.id+'.php?indicator=1';return false;">
                         <div class="view overlay" style="width:250px;">
                             <img src="img/donation/p3.jpg" class="img-fluid " style="width:250px;" alt="">
                             <div class="mask flex-center rgba-red-strong">
@@ -50,7 +50,7 @@ include "myheader.php"
                     
                 <figure class="effect-chico">
                    <div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-                    <a href="childlab.php" id="begger" class="flipLightBox" onclick="document.location=this.id+'.php';return false;">
+                    <a href="childlab.php?indicator=1" id="childlab" class="flipLightBox" onclick="document.location=this.id+'.php?indicator=1';return false;">
                         <div class="view overlay" style="width:250px;">
                             <img src="img/donation/p4.jpg" class="img-fluid " style="width:250px;" alt="">
                             <div class="mask flex-center rgba-red-strong">

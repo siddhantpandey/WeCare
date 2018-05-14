@@ -17,8 +17,8 @@
 						<h2>Contact Info</h2>
 						<ul>
 							<li><i class="fa fa-home fa-2x"></i> Room # 601, Boys' Hostel 3A, Lovely Professional University, Punjab 144411</li><hr>
-							<li><i class="fa fa-phone fa-2x"></i> +919872421830</li><hr>
-							<li><i class="fa fa-envelope fa-2x"></i> 2018wecare@gmail.com</li>
+							<li><i class="fa fa-phone fa-2x"></i></li><hr>
+							<li><i class="fa fa-envelope fa-2x"></i> admin@wecarecenter.com</li>
 						</ul>
 					</div>
 					
@@ -53,17 +53,13 @@
 						<li><a href="https://www.facebook.com/2018WeCare/" class="fb tool-tip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
 						<li><a href="https://twitter.com/2018wecare" class="twitter tool-tip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
 						<li><a href="#" class="gplus tool-tip" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
-						<!--<li><a href="#" class="linkedin tool-tip" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-						<li><a href="#" class="ytube tool-tip" title="You Tube"><i class="fa fa-youtube-play"></i></a></li>
-						<li><a href="#" class="dribbble tool-tip" title="Dribbble"><i class="fa fa-dribbble"></i></a></li>
-						<li><a href="#" class="pinterest tool-tip" title="Pinterest"><i class="fa fa-pinterest-square"></i></a></li>-->
 					</ul>						
 				</div>
 			</div>
 		</div>						
 		<div class="text-center">
 			<div class="copyright">
-				&copy; 2018 <a target="_blank" href="http://bootstraptaste.com/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">WeCare</a>. All Rights Reserved.
+				&copy; 2018 <a target="_blank" href="http://wecarecenet.org/" title="">WeCare</a>. All Rights Reserved.
 			</div>
 		</div>									
 	</footer>

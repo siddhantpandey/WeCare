@@ -1,10 +1,13 @@
+
 <?php include('config.php'); ?>
 <?php
+
 $firstName = $lastName = $charity = $address = $time = $date = $place = "";
 $phone = 0;
 $firstName_err = $lastName_err = $phone_err = $address_err = $charity_err = $radio_err = $time_err = $date_err = $place_err = "";
 
 
+   
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
      if(empty(trim($_POST["firstname"]))){
@@ -53,13 +56,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     } else{
         $place = trim($_POST['location']);
     }
-    if(empty($firstName_err) && empty($lastName_err) && empty($phone_err) && empty($phone_err) && empty($address_err) && empty($charity_err) && empty($radio_err) && empty($time_err) && empty($date_err) && empty($place_err)){
+    if(empty($firstName_err) && empty($lastName_err) && empty($phone_err) && empty($phone_err) && empty($address_err) && empty($charity_err) && empty($radio_err) && empty($time_err) && empty($date_err) && empty($place_err))
+    {
     $sql = "INSERT into donor values('$firstName','$lastName',$phone,'$address','$charityName','$type','$time','$date','$place')";
     $result = mysqli_query($link,$sql);
-    header("location: message.php?indicator=1");}
+    header("location: message.php?indicator=1");
+        
+    }
     mysqli_close($link);
 }
 ?>
+
 
 <?php include"myheader.php"?>
    
@@ -70,7 +77,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
         <marquee><h2><b>For monetory donation we accept cheque in the name of charity of your choice only</b></h2></marquee>
         <p>Please fill in the credentials.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" style="width:500px">
+        <form action="report.php?indicator=1" method="post" style="width:500px">
             <div class="form-group <?php echo (!empty($fistName_err)) ? 'has-error' : ''; ?>">
                 <label>Firstname</label><br>
                 <input type="text" id="firstname" name="firstname" class="form-control" placeholder=""><br>
@@ -78,12 +85,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             </div>    
             <div class="form-group <?php echo (!empty($lastName_err)) ? 'has-error' : ''; ?>">
                 <label>Lastname</label><br>
-                <input type="text" id="lastname" name="lastname" class="form-control" placeholder=""><br>
+                <input type="tel" id="lastname" name="lastname" class="form-control" placeholder=""><br>
                 <span class="help-block"><?php echo $lastName_err; ?></span>
             </div>
             <div class="form-group <?php echo (!empty($phone_err)) ? 'has-error' : ''; ?>">
                 <label>Phone</label><br>
-                <input type="number" id="phone" name="phone" class="form-control" placeholder=""><br>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder=""><br>
                 <span class="help-block"><?php echo $phone_err; ?></span>
             </div>
             <div class="form-group <?php echo (!empty($address_err)) ? 'has-error' : ''; ?>">
@@ -108,11 +115,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             <div >
                 <label>Schedule A Pickup</label><br>
                 <div class="form-group <?php echo (!empty($time_err)) ? 'has-error' : ''; ?>">
-                <input type="text" id="time" name="time" class="form-control" placeholder="Enter Time"><br>
+                <input type="time" id="time" name="time" class="form-control" placeholder="Enter Time"><br>
                 <span class="help-block"><?php echo $time_err; ?></span>
                 </div>
                 <div class="form-group <?php echo (!empty($date_err)) ? 'has-error' : ''; ?>">
-                <input type="text" id="date" name="date" class="form-control" placeholder="Enter Date"><br>
+                <input type="date" id="date" name="date" class="form-control" placeholder="Enter Date"><br>
                 <span class="help-block"><?php echo $date_err; ?></span>
                 </div>
                 <div class="form-group <?php echo (!empty($place_err)) ? 'has-error' : ''; ?>">
@@ -126,6 +133,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         </form>
     </div>    
       </center>
-   
+      
+
    
    <?php include"myfooter.php";?>

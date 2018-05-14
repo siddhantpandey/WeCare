@@ -287,7 +287,7 @@
 				</div>
 				<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
 					<div class="text-center">
-						<img src="img/team/3.png" alt="">
+						<img src="img/team/sriv.gif" alt="" width="180px" height="180px">
 						<h2>Shubham Srivastava</h2>
 						<h4>Team Member</h4>
 						<p>Student, B.Tech., Lovely Professional University</p>
