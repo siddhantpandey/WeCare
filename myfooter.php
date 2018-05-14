@@ -18,7 +18,7 @@
 						<ul>
 							<li><i class="fa fa-home fa-2x"></i> Room # 601, Boys' Hostel 3A, Lovely Professional University, Punjab 144411</li><hr>
 							<li><i class="fa fa-phone fa-2x"></i></li><hr>
-							<li><i class="fa fa-envelope fa-2x"></i> admin@wecarecenter.com</li>
+							<li><i class="fa fa-envelope fa-2x"></i> admin@wecarecenter.org</li>
 						</ul>
 					</div>
 					
