@@ -83,7 +83,7 @@ $logined_password = $_SESSION['password'];
                                echo'<p><a href="logout.php?indicator=1" class="btn btn-danger">' . $logined_username . '</a></p>'; 
                             }
                             else{
-                                echo'<p><a href="login.php?indicator=1" class="btn btn-danger">Login</a><a href="adminlogin.php?indicator=1" class="btn btn-danger">Admin</a></p>';
+                                echo'<p><a href="login.php?indicator=1" class="btn btn-danger">Login</a></p>';
                             }
                             ?>
                             
