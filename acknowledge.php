@@ -2,7 +2,7 @@
     if(isset($_POST['send'])){
         
       
-    $to = "admin@wecarecenter.com"; // this is your Email address
+    $to = "admin@wecarecenter.org"; // this is your Email address
     $message = 'Name: '.$_POST['first_name'].' '.$_POST['last_name']."\r\n\r\n";
     $message .= 'Email: '.$_POST['email']."\r\n\r\n";
     $message .= 'Comments: '.$_POST['message'];
