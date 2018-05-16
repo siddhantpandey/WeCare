@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2018 at 08:01 PM
+-- Generation Time: May 16, 2018 at 12:57 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -124,7 +124,7 @@ CREATE TABLE `donations_info` (
 CREATE TABLE `donor` (
   `firstname` varchar(20) DEFAULT NULL,
   `lastname` varchar(20) DEFAULT NULL,
-  `phone` int(10) DEFAULT NULL,
+  `phone` tinytext,
   `address` varchar(255) DEFAULT NULL,
   `nameofcharity` varchar(255) DEFAULT NULL,
   `donationtype` varchar(10) DEFAULT NULL,
@@ -138,16 +138,16 @@ CREATE TABLE `donor` (
 --
 
 INSERT INTO `donor` (`firstname`, `lastname`, `phone`, `address`, `nameofcharity`, `donationtype`, `pickuptime`, `pickupdate`, `pickuplocation`) VALUES
-('Rajkumar', 'Mishra', 2147483647, 'Sarvodaya Nagar, Kanpur', 'Being Human', 'Money', '11:00 AM', '20/04/2018', 'H-121, Street No. 8,'),
-('', '', -3, '', '', '', '', '', ''),
-('NK', 'Pandey', 2147483647, 'Govind Nagar, Auraiya', 'Umang', 'Goods', '11:00 AM', '01-05-2018', 'Govind Nagar, Auraiy'),
-('', '', 0, '', '', '', '', '', ''),
-('', '', 0, '', '', '', '', '', ''),
-('A', 'Pandey', 2147483647, 'Auraiya', '', '', '11:00 AM', '03-05-2018', 'Auraiya'),
-('', '', 0, '', '', '', '', '', ''),
-('', '', 0, '', '', '', '', '', ''),
-('', '', 0, '', '', '', '', '', ''),
-('Siddhant', 'Pandey', 2147483647, '451299652521', '', 'Goods', '11:00 AM', '03-05-2018', 'Auraiya');
+('Rajkumar', 'Mishra', '2147483647', 'Sarvodaya Nagar, Kanpur', 'Being Human', 'Money', '11:00 AM', '20/04/2018', 'H-121, Street No. 8,'),
+('', '', '-3', '', '', '', '', '', ''),
+('NK', 'Pandey', '2147483647', 'Govind Nagar, Auraiya', 'Umang', 'Goods', '11:00 AM', '01-05-2018', 'Govind Nagar, Auraiy'),
+('', '', '0', '', '', '', '', '', ''),
+('', '', '0', '', '', '', '', '', ''),
+('A', 'Pandey', '2147483647', 'Auraiya', '', '', '11:00 AM', '03-05-2018', 'Auraiya'),
+('', '', '0', '', '', '', '', '', ''),
+('', '', '0', '', '', '', '', '', ''),
+('', '', '0', '', '', '', '', '', ''),
+('Siddhant', 'Pandey', '2147483647', '451299652521', '', 'Goods', '11:00 AM', '03-05-2018', 'Auraiya');
 
 -- --------------------------------------------------------
 
@@ -157,8 +157,8 @@ INSERT INTO `donor` (`firstname`, `lastname`, `phone`, `address`, `nameofcharity
 
 CREATE TABLE `personsofinterest` (
   `name` varchar(50) NOT NULL,
-  `aadhaar` int(12) NOT NULL,
-  `phone` int(10) DEFAULT NULL,
+  `aadhaar` tinytext NOT NULL,
+  `phone` tinytext,
   `address` varchar(200) NOT NULL,
   `issue` varchar(500) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL
@@ -169,11 +169,12 @@ CREATE TABLE `personsofinterest` (
 --
 
 INSERT INTO `personsofinterest` (`name`, `aadhaar`, `phone`, `address`, `issue`, `image`) VALUES
-('Kamlesh Nagarkoti', 0, 0, 'LPU, Phagwara', 'Children working at construction site', '6.jpg'),
-('Ulook', 23, 13, 'wee', '3qasds', 'IMG_20180220_100145_Bokeh.jpg'),
-('Raj', 123, 234, 'mumbai', 'Mental', 'download.jpg'),
-('Say', 234, 242334, 'efnn', 'sad', '1.jpg'),
-('Shivam Mavi', 2147483647, 0, 'Signal near hanuman mandir, bus stand Phagwara', 'Forced to Beg.', '9.jpg');
+('Kamlesh Nagarkoti', '0', '0', 'LPU, Phagwara', 'Children working at construction site', '6.jpg'),
+('Ulook', '23', '13', 'wee', '3qasds', 'IMG_20180220_100145_Bokeh.jpg'),
+('Raj', '123', '234', 'mumbai', 'Mental', 'download.jpg'),
+('Say', '234', '242334', 'efnn', 'sad', '1.jpg'),
+('Shivam Mavi', '2147483647', '0', 'Signal near hanuman mandir, bus stand Phagwara', 'Forced to Beg.', '9.jpg'),
+('Raj Thalekar', '123456789123', '9876654321', 'LPU', 'Pothead', '1.jpg');
 
 -- --------------------------------------------------------
 
@@ -261,7 +262,7 @@ INSERT INTO `users` (`id`, `username`, `PASSWORD`, `created_at`) VALUES
 CREATE TABLE `volunteer` (
   `firstname` varchar(20) NOT NULL,
   `lastname` varchar(20) NOT NULL,
-  `phone` int(10) NOT NULL,
+  `phone` tinytext,
   `address` varchar(100) NOT NULL,
   `gps` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -271,7 +272,9 @@ CREATE TABLE `volunteer` (
 --
 
 INSERT INTO `volunteer` (`firstname`, `lastname`, `phone`, `address`, `gps`) VALUES
-('Prashant', 'Chaple', 2147483647, 'LPU, Phagwara', 'n/a');
+('Prashant', 'Chaple', '2147483647', 'LPU, Phagwara', 'n/a'),
+('Siddhant', 'Pandey', '2147483647', 'Auraiya', 'n/a'),
+('Siddhant', 'Pandey', '9872421830', 'Auraiya', 'n/a');
 
 --
 -- Indexes for dumped tables
@@ -301,12 +304,6 @@ ALTER TABLE `childlab`
 ALTER TABLE `donations_info`
   ADD PRIMARY KEY (`sr_no`,`aadhaar_no`),
   ADD UNIQUE KEY `uuq` (`contact_no`);
-
---
--- Indexes for table `personsofinterest`
---
-ALTER TABLE `personsofinterest`
-  ADD PRIMARY KEY (`aadhaar`);
 
 --
 -- Indexes for table `skul`
