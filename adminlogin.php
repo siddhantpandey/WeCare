@@ -1,6 +1,4 @@
-<?php
-    session_start();
-?>
+
 <?php
 // Include config file
 require_once 'config.php';
@@ -45,7 +43,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 mysqli_stmt_store_result($stmt);
                 
                 // Check if username exists, if yes then verify password
-                if(mysqli_stmt_num_rows($stmt) == 1){                    
+                if(mysqli_stmt_num_rows($stmt) == 1){ 
+                    session_start();
                     // Bind result variables
                     mysqli_stmt_bind_result($stmt, $username, $hashed_password);
                     if(mysqli_stmt_fetch($stmt)){

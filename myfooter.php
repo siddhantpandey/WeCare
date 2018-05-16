@@ -50,16 +50,16 @@
 			<div class="container">
 				<div class="col-md-6 col-md-offset-3">						
 					<ul class="social-network">
-						<li><a href="https://www.facebook.com/2018WeCare/" class="fb tool-tip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="https://twitter.com/2018wecare" class="twitter tool-tip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#" class="gplus tool-tip" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="https://www.facebook.com/2018WeCare/" class="fb tool-tip" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="https://twitter.com/2018wecare" class="twitter tool-tip" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="https://plus.google.com/u/2/102341925427279835189" class="gplus tool-tip" title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
 					</ul>						
 				</div>
 			</div>
 		</div>						
 		<div class="text-center">
 			<div class="copyright">
-				&copy; 2018 <a target="_blank" href="http://wecarecenet.org/" title="">WeCare</a>. All Rights Reserved.
+				&copy; 2018 <a target="_blank" href="http://wecarecenter.org/" title="">WeCare</a>. All Rights Reserved.
 			</div>
 		</div>									
 	</footer>

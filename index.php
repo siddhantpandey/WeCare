@@ -225,7 +225,7 @@
                     </div>
                     <div class="col-sm-4 plan price-three wow fadeInDown " data-wow-offset="0" data-wow-delay="0.9s">
                         <ul>
-                            <li class="heading-three bg-danger">
+                            <li class="heading-one">
                                 <h2>Persons of Interest</h2>
                                 <!--<span>$24/Month</span>-->
                             </li>
@@ -241,7 +241,7 @@
                     </div>
                     <div class="col-sm-4 plan price-three wow fadeInDown " data-wow-offset="0" data-wow-delay="0.9s">
                         <ul>
-                            <li class="heading-three bg-success">
+                            <li class="heading-two">
                                 <h2>Volunteer to Teach</h2>
                                 <!--<span>$24/Month</span>-->
                             </li>
