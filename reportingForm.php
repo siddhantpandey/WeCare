@@ -1,6 +1,6 @@
 <?php include('config.php'); ?>
 
-
+<?php include"myheader.php"?>
 <?php
 
 $name =  $address = $issue  = $image = "";
@@ -8,7 +8,7 @@ $aadhaar = $phone = 0;
 $name_err = $aadhaar_err = $phone_err = $address_err = $issue_err  = "";
 
 
-if($_SERVER["REQUEST_METHOD"] == "POST")
+if(isset($_SESSION) && $_SERVER["REQUEST_METHOD"] == "POST")
 {
      if(empty(trim($_POST["name"]))){
         $name_err = 'Please enter name.';
@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $issue = trim($_POST['issue']);
     }
     $image = $_POST['fileToUpload'];
-    if(empty($name_err) && empty($aadhaar_err) && empty($phone_err) && empty($address_err) && empty($issue_err))
+    if(empty($name_err) && empty($aadhaar_err) && empty($phone_err) && empty($address_err) && empty($issue_err) && $_SESSION['loggedin']==true)
     {
         $sql = "INSERT into personsofinterest values('$name',$aadhaar,$phone,'$address','$issue','$image')";
         $check = "SELECT aadhaar FROM  personsofinterest WHERE aadhaar=$aadhaar";
@@ -61,18 +61,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 header("location: index.php?indicator=1");
         }
     }
+    else
+    {
+        echo "<script>
+        alert('You must login first. You will be redirected shortly.');
+        window.location.href='login.php?indicator=1';
+        </script>";
+    }
+        
     mysqli_close($link);
 }
+
 ?>
 
-<?php include"myheader.php"?>
+
    
    <!--Log In Form-->
    <br/><br/><br/><br/><br/><br/><br/>
    <center>
    <div class="wrapper">
 
-        <marquee><h2><b>For monetory donation we accept cheque in the name of charity of your choice only</b></h2></marquee>
+        
         <p>Please fill in the credentials.</p>
         <form action="reportingForm.php?indicator=1" method="post" style="width:500px">
             <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
@@ -83,13 +92,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             <br/>    
             <div class="form-group <?php echo (!empty($aadhaar_err)) ? 'has-error' : ''; ?>">
                 <label>Aadhaar</label>
-                <input type="number" id="aadhaar" name="aadhaar" class="form-control" pattern=".{12,}">
+                <input type="text" id="aadhaar" name="aadhaar" class="form-control" pattern="[0-9]{12}">
                 <span class="help-block"><?php echo $aadhaar_err; ?></span>
             </div>
             <br/>
             <div class="form-group <?php echo (!empty($phone_err)) ? 'has-error' : ''; ?>">
                 <label>Phone</label>
-                <input type="tel" id="phone" name="phone" class="form-control">
+                <input type="text" id="phone" name="phone" class="form-control" pattern="[789][0-9]{9}">
                 <span class="help-block"><?php echo $phone_err; ?></span>
             </div>
             <br/>

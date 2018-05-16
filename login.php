@@ -54,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             save the username to the session */
                             $_SESSION['username'] = $username;   
                             $_SESSION['password'] = $password;      
-
+                            $_SESSION['loggedin'] = true;
                             header("location: index.php?indicator=1");
                         } else{
                             // Display an error message if password is not valid

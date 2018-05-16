@@ -29,10 +29,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     } else{
         $address = trim($_POST['address']);
     }
-    if(empty($firstName_err) && empty($lastName_err) && empty($phone_err) && empty($phone_err) && empty($address_err)){
+    if(empty($firstName_err) && empty($lastName_err) && empty($phone_err) && empty($phone_err) && empty($address_err) && $_SESSION['loggedin'] == true){
     $sql = "INSERT into volunteer values('$firstName','$lastName',$phone,'$address','n/a')";
     $result = mysqli_query($link,$sql);
     header("location: message.php?indicator=1");}
+    else
+    {
+        echo "<script>
+alert('You must login first. You will be redirected shortly.');
+window.location.href='login.php?indicator=1';
+</script>";
+    }
     mysqli_close($link);
 }
 ?>
@@ -44,7 +51,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
    <center>
    <div class="wrapper">
 
-        <marquee><h2><b>For monetory donation we accept cheque in the name of charity of your choice only</b></h2></marquee>
+       
         <p>Please fill in the credentials.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" style="width:500px">
             <div class="form-group <?php echo (!empty($fistName_err)) ? 'has-error' : ''; ?>">
@@ -59,7 +66,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             </div>
             <div class="form-group <?php echo (!empty($phone_err)) ? 'has-error' : ''; ?>">
                 <label>Phone</label><br>
-                <input type="number" id="phone" name="phone" class="form-control" placeholder=""><br>
+                <input type="text" id="phone" name="phone" class="form-control" placeholder="" pattern="[789][0-9]{9}"><br>
                 <span class="help-block"><?php echo $phone_err; ?></span>
             </div>
             <div class="form-group <?php echo (!empty($address_err)) ? 'has-error' : ''; ?>">

@@ -56,12 +56,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     } else{
         $place = trim($_POST['location']);
     }
-    if(empty($firstName_err) && empty($lastName_err) && empty($phone_err) && empty($phone_err) && empty($address_err) && empty($charity_err) && empty($radio_err) && empty($time_err) && empty($date_err) && empty($place_err))
+    if(empty($firstName_err) && empty($lastName_err) && empty($phone_err) && empty($phone_err) && empty($address_err) && empty($charity_err) && empty($radio_err) && empty($time_err) && empty($date_err) && empty($place_err) && $_SESSION['loggedin']==true)
     {
     $sql = "INSERT into donor values('$firstName','$lastName',$phone,'$address','$charityName','$type','$time','$date','$place')";
     $result = mysqli_query($link,$sql);
     header("location: message.php?indicator=1");
         
+    }
+    else
+    {
+        echo "<script>
+alert('You must login first. You will be redirected shortly.');
+window.location.href='login.php?indicator=1';
+</script>";
     }
     mysqli_close($link);
 }
@@ -90,7 +97,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             </div>
             <div class="form-group <?php echo (!empty($phone_err)) ? 'has-error' : ''; ?>">
                 <label>Phone</label><br>
-                <input type="tel" id="phone" name="phone" class="form-control" placeholder=""><br>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="" pattern="[789][0-9]{9}"><br>
                 <span class="help-block"><?php echo $phone_err; ?></span>
             </div>
             <div class="form-group <?php echo (!empty($address_err)) ? 'has-error' : ''; ?>">

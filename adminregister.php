@@ -120,7 +120,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <br/>  
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Admin-Password</label>
-                <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
+                <input type="password" name="password" class="form-control" value="<?php echo $password; ?>" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <br/>
